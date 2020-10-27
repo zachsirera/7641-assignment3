@@ -2,7 +2,7 @@
 # Zach Sirera - Fall 2020
 
 # Dataset details: 
-# Name: Wine Quality Dataset
+# Name: Adult Dataset
 
 import csv
 import random
@@ -12,7 +12,7 @@ import pandas as pd
 
 def main(filename):
 	# data = get_all_data(filename)
-	df = load_data()
+	df = load_data(filename)
 	df = pd.get_dummies(df, columns=['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'sex', 'native-country', 'income'])
 	training_data, testing_data = separate_data_fixed(df, 0.8)
 	train_x, train_y = parse(training_data)
@@ -133,8 +133,8 @@ def parse(df):
 	return df.iloc[:, :108], df.iloc[:, 109:]
 
 
-def load_data():
-    return pd.read_csv('adult_data.csv')
+def load_data(filename):
+    return pd.read_csv(filename)
 
 # if __name__ == '__main__':
 # 	df = load_data()

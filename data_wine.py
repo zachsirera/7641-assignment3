@@ -6,10 +6,13 @@
 
 import csv
 import random
+from sklearn.preprocessing import OneHotEncoder
+import numpy as np
+import pandas as pd
 
 def main(filename):
-	data = get_all_data(filename)
-	training_data, testing_data = separate_data_fixed(0.8, data)
+	data = pd.read_csv(filename, sep=";")
+	training_data, testing_data = separate_data_fixed(data, 0.8)
 	train_x, train_y = parse(training_data)
 	test_x, test_y = parse(testing_data)
 
@@ -56,40 +59,44 @@ def separate_data_rand(fraction, data):
 
 	return training_data, testing_data
 
-def separate_data_fixed(fraction, data):
-
-	training_data = []
-	testing_data = []
-
-	for each in data:
-		if len(training_data) / len(data) <= fraction:
-			training_data.append(each)
-		else:
-			testing_data.append(each)
-
-	return training_data, testing_data
+def separate_data_fixed(df, fraction):
 
 
-def parse(dataset):
-	''' This is a function to parse the dataset dictionary and format it properly for the decision tree algorithm implementation '''
+	msk = np.random.rand(len(df)) < fraction
+	train = df[msk]
+	test = df[~msk]
 
-	x = []
-	y = []
+	return train, test
 
-	for row in dataset:
-		x.append([
-			float(row["fixed acidity"]), 
-			float(row["volatile acidity"]),
-			float(row["citric acid"]),
-			float(row["residual sugar"]),
-			float(row["chlorides"]),
-			float(row["free sulfur dioxide"]),
-			float(row["total sulfur dioxide"]),
-			float(row["density"]),
-			float(row["pH"]),
-			float(row["sulphates"]),
-			float(row["alcohol"])
-		])
-		y.append(int(row["quality"]))
 
-	return x, y
+# def parse(dataset):
+# 	''' This is a function to parse the dataset dictionary and format it properly for the decision tree algorithm implementation '''
+
+# 	x = []
+# 	y = []
+
+# 	for row in dataset:
+# 		x.append([
+# 			float(row["fixed acidity"]), 
+# 			float(row["volatile acidity"]),
+# 			float(row["citric acid"]),
+# 			float(row["residual sugar"]),
+# 			float(row["chlorides"]),
+# 			float(row["free sulfur dioxide"]),
+# 			float(row["total sulfur dioxide"]),
+# 			float(row["density"]),
+# 			float(row["pH"]),
+# 			float(row["sulphates"]),
+# 			float(row["alcohol"])
+# 		])
+# 		y.append(int(row["quality"]))
+
+# 	return x, y
+
+def parse(df):
+	''' ''' 
+
+	return df.iloc[:, :10], df.iloc[:, 11:]
+
+# if __name__ == '__main__':
+# 	main('winequality-white.csv')
