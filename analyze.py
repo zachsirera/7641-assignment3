@@ -8,6 +8,7 @@ from sklearn.cluster import KMeans
 from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA, FastICA
+from sklearn.random_projection import johnson_lindenstrauss_min_dim, GaussianRandomProjection
 
 from scipy.spatial.distance import cdist 
 
@@ -138,40 +139,82 @@ def apply_ICA(train_x):
 	return independent_df
 
 
+def rand_proj_reconstruction_error(train_x, n):
+	''' '''
+
+	results = [] 
+
+	for i in range(1, n):
+
+		rand_proj = GaussianRandomProjection(n_components=n)
+		reduced_df = rand_proj.fit_transform(train_x)
+		
+		psuedo_inverse = np.linalg.pinv(rand_proj.components_.T)
+		reconstructed = reduced_df.dot(psuedo_inverse)
+
+		error = metrics.mean_squared_error(train_x, reconstructed)
+		# # error = (np.linalg.norm(train_x - reconstructed) ** 2) / len(train_x)
+		# # error = np.sum(np.square(train_x - reconstructed))
+		# error = np.mean((train_x - reconstructed)**2)
+		# error =  ((train_x - reconstructed) ** 2).sum(1).mean()
+	
+		results.append({"n_components": i, "reconstruction_error": error})
+
+
+	return results
+
+
+def rand_proj(train_x, n):
+	''' ''' 
+
+	rp = GaussianRandomProjection(n_components = n)
+	reduced_df = rp.fit_transform(train_x)
+
+	return reduced_df
+
 
 
 
 if __name__ == '__main__':
 	# Adult Dataset
-	train_x, train_y, test_x, test_y = data_adult.main('adult_data.csv')
+	# train_x, train_y, test_x, test_y = data_adult.main('adult_data.csv')
 	# print(kmeans(train_x, 10))
 	# print(expectation_max(train_x, 20))
 	# apply_PCA(train_x, train_y, 3)
-	pca_adult = apply_PCA(train_x, train_y, 4)
+	# pca_adult = apply_PCA(train_x, train_y, 4)
 	# print(pca_adult.shape)
 	# print(kmeans(pca_adult, 200))
-	print(expectation_max(pca_adult, 20))
+	# print(expectation_max(pca_adult, 20))
 	# ica_adult = apply_ICA(train_x)
 	# print(kmeans(ica_adult, 20))
 	# print(expectation_max(ica_adult, 20))
-
-
+	# rand_proj = rand_proj_reconstruction_error(train_x, 100)
+	# print(rand_proj) # min occurs around 7
+	# rp_reduced = rand_proj(train_x, 7)
+	# print(kmeans(rp_reduced, 10))
+	# print(expectation_max(rp_reduced, 20))
 
 
 
 	# Wine Dataset
-	# train_x, train_y, test_x, test_y = data_wine.main('winequality-white.csv')
+	train_x, train_y, test_x, test_y = data_wine.main('winequality-white.csv')
 	# # print(kmeans(train_x, 20))
 	# # print(expectation_max(train_x, 20))
-	# # pca_wine = apply_PCA(train_x, train_y, 4)
+	# pca_wine = apply_PCA(train_x, train_y, 4)
 	# # print(pca_wine.shape)
-	# print(kmeans(pca_wine, 200))
+	# print(kmeans(pca_wine, 25))
 	# print(expectation_max(pca_wine, 20))
 	# ica_wine = apply_ICA(train_x)
 	# print(kmeans(ica_wine, 20))
 	# print(expectation_max(ica_wine, 20))
+	# rand_proj = rand_proj_reconstruction_error(train_x, 10) 
+	# print(rand_proj) # min occurs around 4
+	# rp_reduced = rand_proj(train_x, 4)
+	# print(kmeans(rp_reduced, 20))
+	# print(expectation_max(rp_reduced, 20))
 
 
+	pass 
 
 
 

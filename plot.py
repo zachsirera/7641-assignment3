@@ -490,7 +490,7 @@ def em_adult_pca():
 def kmeans_wine_pca():
 	''' '''
 
-	# scores = 
+	scores = [{'n_clusters': 2, 'algorithm': 'full', 'silhouette_score': 0.2150637021039633, 'training_time': 0.20894527435302734, 'distortion': 2.536971953548731, 'inertia': 30417.165774877933}, {'n_clusters': 2, 'algorithm': 'elkan', 'silhouette_score': 0.2150637021039633, 'training_time': 0.08889389038085938, 'distortion': 2.536971953548731, 'inertia': 30417.165774877933}, {'n_clusters': 3, 'algorithm': 'full', 'silhouette_score': 0.15233585049113688, 'training_time': 0.2186579704284668, 'distortion': 2.4045135645647444, 'inertia': 27537.900809502124}, {'n_clusters': 3, 'algorithm': 'elkan', 'silhouette_score': 0.15233585049113688, 'training_time': 0.16074013710021973, 'distortion': 2.4045135645647444, 'inertia': 27537.900809502124}, {'n_clusters': 4, 'algorithm': 'full', 'silhouette_score': 0.16566927043597687, 'training_time': 0.2114419937133789, 'distortion': 2.3386340689358605, 'inertia': 25075.233218521305}, {'n_clusters': 4, 'algorithm': 'elkan', 'silhouette_score': 0.16566927043597687, 'training_time': 0.195814847946167, 'distortion': 2.3386340689358605, 'inertia': 25075.233218521305}, {'n_clusters': 5, 'algorithm': 'full', 'silhouette_score': 0.16166053956288345, 'training_time': 0.20859599113464355, 'distortion': 2.2672100793310728, 'inertia': 23442.77455452207}, {'n_clusters': 5, 'algorithm': 'elkan', 'silhouette_score': 0.16166053956288345, 'training_time': 0.2948648929595947, 'distortion': 2.2672100793310728, 'inertia': 23442.77455452207}, {'n_clusters': 6, 'algorithm': 'full', 'silhouette_score': 0.1392759654976935, 'training_time': 0.2771279811859131, 'distortion': 2.203049806616115, 'inertia': 22188.319627094737}, {'n_clusters': 6, 'algorithm': 'elkan', 'silhouette_score': 0.1392759654976935, 'training_time': 0.3423900604248047, 'distortion': 2.203049806616115, 'inertia': 22188.319627094737}, {'n_clusters': 7, 'algorithm': 'full', 'silhouette_score': 0.12900221305180323, 'training_time': 0.29518795013427734, 'distortion': 2.1454704790879244, 'inertia': 21059.40087714219}, {'n_clusters': 7, 'algorithm': 'elkan', 'silhouette_score': 0.12900221305180323, 'training_time': 0.398909330368042, 'distortion': 2.1454704790879244, 'inertia': 21059.40087714219}, {'n_clusters': 8, 'algorithm': 'full', 'silhouette_score': 0.13497898610745016, 'training_time': 0.3308990001678467, 'distortion': 2.098410915540423, 'inertia': 20089.098573708012}, {'n_clusters': 8, 'algorithm': 'elkan', 'silhouette_score': 0.13497898610745016, 'training_time': 0.43498706817626953, 'distortion': 2.098410915540423, 'inertia': 20089.098573708012}, {'n_clusters': 9, 'algorithm': 'full', 'silhouette_score': 0.13090636420202306, 'training_time': 0.41535019874572754, 'distortion': 2.0575939110363244, 'inertia': 19326.626325861784}, {'n_clusters': 9, 'algorithm': 'elkan', 'silhouette_score': 0.13090636420202306, 'training_time': 0.4608027935028076, 'distortion': 2.0575939110363244, 'inertia': 19326.626325861784}, {'n_clusters': 10, 'algorithm': 'full', 'silhouette_score': 0.1339994451414881, 'training_time': 0.3594510555267334, 'distortion': 2.0257291683641565, 'inertia': 18717.04242529093}, {'n_clusters': 10, 'algorithm': 'elkan', 'silhouette_score': 0.1339994451414881, 'training_time': 0.4331221580505371, 'distortion': 2.0257291683641565, 'inertia': 18717.04242529093}, {'n_clusters': 11, 'algorithm': 'full', 'silhouette_score': 0.123713709650232, 'training_time': 0.4541192054748535, 'distortion': 1.9954452118855883, 'inertia': 18174.681274068284}, {'n_clusters': 11, 'algorithm': 'elkan', 'silhouette_score': 0.123713709650232, 'training_time': 0.5317988395690918, 'distortion': 1.9954452118855883, 'inertia': 18174.681274068284}, {'n_clusters': 12, 'algorithm': 'full', 'silhouette_score': 0.1184095263820918, 'training_time': 0.3607959747314453, 'distortion': 1.969420560969946, 'inertia': 17780.60397701587}, {'n_clusters': 12, 'algorithm': 'elkan', 'silhouette_score': 0.1184095263820918, 'training_time': 0.45979976654052734, 'distortion': 1.969420560969946, 'inertia': 17780.60397701587}, {'n_clusters': 13, 'algorithm': 'full', 'silhouette_score': 0.12063189414087663, 'training_time': 0.4080390930175781, 'distortion': 1.944149065401527, 'inertia': 17345.5810424145}, {'n_clusters': 13, 'algorithm': 'elkan', 'silhouette_score': 0.12063189414087663, 'training_time': 0.5797381401062012, 'distortion': 1.944149065401527, 'inertia': 17345.5810424145}, {'n_clusters': 14, 'algorithm': 'full', 'silhouette_score': 0.12411971786062512, 'training_time': 0.388660192489624, 'distortion': 1.9242675903039552, 'inertia': 16972.93175855701}, {'n_clusters': 14, 'algorithm': 'elkan', 'silhouette_score': 0.12411971786062512, 'training_time': 0.49643421173095703, 'distortion': 1.9242675903039552, 'inertia': 16972.93175855701}, {'n_clusters': 15, 'algorithm': 'full', 'silhouette_score': 0.11974862893127397, 'training_time': 0.39152002334594727, 'distortion': 1.900842743652157, 'inertia': 16599.5370892463}, {'n_clusters': 15, 'algorithm': 'elkan', 'silhouette_score': 0.11974862893127397, 'training_time': 0.5048501491546631, 'distortion': 1.900842743652157, 'inertia': 16599.5370892463}, {'n_clusters': 16, 'algorithm': 'full', 'silhouette_score': 0.1182238891746427, 'training_time': 0.43999505043029785, 'distortion': 1.8802702468433108, 'inertia': 16300.631356295413}, {'n_clusters': 16, 'algorithm': 'elkan', 'silhouette_score': 0.1182238891746427, 'training_time': 0.5622851848602295, 'distortion': 1.8802702468433108, 'inertia': 16300.631356295416}, {'n_clusters': 17, 'algorithm': 'full', 'silhouette_score': 0.11744516148591136, 'training_time': 0.5223443508148193, 'distortion': 1.8771098345681099, 'inertia': 16033.71725368301}, {'n_clusters': 17, 'algorithm': 'elkan', 'silhouette_score': 0.11744516148591136, 'training_time': 0.7593889236450195, 'distortion': 1.8771098345681099, 'inertia': 16033.717253683011}, {'n_clusters': 18, 'algorithm': 'full', 'silhouette_score': 0.11889237231271652, 'training_time': 0.5497081279754639, 'distortion': 1.8572619931574792, 'inertia': 15735.25659459248}, {'n_clusters': 18, 'algorithm': 'elkan', 'silhouette_score': 0.11889237231271652, 'training_time': 0.7884328365325928, 'distortion': 1.8572619931574792, 'inertia': 15735.25659459248}, {'n_clusters': 19, 'algorithm': 'full', 'silhouette_score': 0.12177157689873506, 'training_time': 0.6317529678344727, 'distortion': 1.841165768750384, 'inertia': 15529.376016573822}, {'n_clusters': 19, 'algorithm': 'elkan', 'silhouette_score': 0.12177157689873506, 'training_time': 0.8432509899139404, 'distortion': 1.841165768750384, 'inertia': 15529.376016573822}, {'n_clusters': 20, 'algorithm': 'full', 'silhouette_score': 0.12249616221658889, 'training_time': 0.6375541687011719, 'distortion': 1.8369181833205241, 'inertia': 15201.991175818006}, {'n_clusters': 20, 'algorithm': 'elkan', 'silhouette_score': 0.12249616221658889, 'training_time': 0.965726375579834, 'distortion': 1.8369181833205241, 'inertia': 15201.991175818006}, {'n_clusters': 21, 'algorithm': 'full', 'silhouette_score': 0.11747684056552482, 'training_time': 0.6670000553131104, 'distortion': 1.8130367248905184, 'inertia': 15024.721604198136}, {'n_clusters': 21, 'algorithm': 'elkan', 'silhouette_score': 0.11747684056552482, 'training_time': 1.033374309539795, 'distortion': 1.8130367248905184, 'inertia': 15024.721604198134}, {'n_clusters': 22, 'algorithm': 'full', 'silhouette_score': 0.114633639902673, 'training_time': 0.6984050273895264, 'distortion': 1.8019081971590556, 'inertia': 14819.21049297137}, {'n_clusters': 22, 'algorithm': 'elkan', 'silhouette_score': 0.114633639902673, 'training_time': 1.270310878753662, 'distortion': 1.8019081971590556, 'inertia': 14819.21049297137}, {'n_clusters': 23, 'algorithm': 'full', 'silhouette_score': 0.11448029411461494, 'training_time': 0.6989779472351074, 'distortion': 1.7925913313297328, 'inertia': 14578.78607897536}, {'n_clusters': 23, 'algorithm': 'elkan', 'silhouette_score': 0.11448029411461494, 'training_time': 1.2976329326629639, 'distortion': 1.7925913313297328, 'inertia': 14578.78607897536}, {'n_clusters': 24, 'algorithm': 'full', 'silhouette_score': 0.1164498222744498, 'training_time': 0.741569995880127, 'distortion': 1.7728276416115405, 'inertia': 14374.485845341791}, {'n_clusters': 24, 'algorithm': 'elkan', 'silhouette_score': 0.1164498222744498, 'training_time': 1.4136979579925537, 'distortion': 1.7728276416115405, 'inertia': 14374.485845341791}]
 
 	algorithms = list({x['algorithm'] for x in scores})
 	colors = ['r', 'g']
@@ -558,7 +558,7 @@ def kmeans_wine_pca():
 
 def em_wine_pca():
 	''' ''' 
-	# results = 
+	results = [{'n_components': 1, 'covariance': 'full', 'training_time': 0.09469914436340332, 'bic': 92494.28314711632, 'aic': 92217.78717772939}, {'n_components': 2, 'covariance': 'full', 'training_time': 0.11732983589172363, 'bic': 86762.14667026815, 'aic': 86202.87073219003}, {'n_components': 3, 'covariance': 'full', 'training_time': 0.15928888320922852, 'bic': 84869.01740267308, 'aic': 84026.96149590379}, {'n_components': 4, 'covariance': 'full', 'training_time': 0.15767884254455566, 'bic': 84324.57048324744, 'aic': 83199.73460778696}, {'n_components': 5, 'covariance': 'full', 'training_time': 0.23659300804138184, 'bic': 83928.41236662635, 'aic': 82520.79652247467}, {'n_components': 6, 'covariance': 'full', 'training_time': 0.262923002243042, 'bic': 83864.99643399818, 'aic': 82174.60062115533}, {'n_components': 7, 'covariance': 'full', 'training_time': 0.24696803092956543, 'bic': 83481.14293855165, 'aic': 81507.96715701761}, {'n_components': 8, 'covariance': 'full', 'training_time': 0.2863891124725342, 'bic': 83429.46985804196, 'aic': 81173.51410781674}, {'n_components': 9, 'covariance': 'full', 'training_time': 0.4311981201171875, 'bic': 83417.89382992397, 'aic': 80879.15811100756}, {'n_components': 10, 'covariance': 'full', 'training_time': 0.3060019016265869, 'bic': 83745.15513316121, 'aic': 80923.63944555362}, {'n_components': 11, 'covariance': 'full', 'training_time': 0.36690306663513184, 'bic': 83747.81560506254, 'aic': 80643.51994876377}, {'n_components': 12, 'covariance': 'full', 'training_time': 0.591576099395752, 'bic': 83718.46176336637, 'aic': 80331.38613837642}, {'n_components': 13, 'covariance': 'full', 'training_time': 0.7471952438354492, 'bic': 83535.28154591577, 'aic': 79865.42595223463}, {'n_components': 14, 'covariance': 'full', 'training_time': 0.5305719375610352, 'bic': 84032.43699609659, 'aic': 80079.80143372426}, {'n_components': 15, 'covariance': 'full', 'training_time': 0.5784618854522705, 'bic': 84128.00889807538, 'aic': 79892.59336701187}, {'n_components': 16, 'covariance': 'full', 'training_time': 1.0062320232391357, 'bic': 83973.555872898, 'aic': 79455.36037314331}, {'n_components': 17, 'covariance': 'full', 'training_time': 0.695080041885376, 'bic': 84171.72876053097, 'aic': 79370.7532920851}, {'n_components': 18, 'covariance': 'full', 'training_time': 0.7173929214477539, 'bic': 84461.73397782158, 'aic': 79377.97854068452}, {'n_components': 19, 'covariance': 'full', 'training_time': 0.8009369373321533, 'bic': 84499.84582175562, 'aic': 79133.31041592738}, {'n_components': 1, 'covariance': 'tied', 'training_time': 0.014565229415893555, 'bic': 92494.28314711632, 'aic': 92217.78717772939}, {'n_components': 2, 'covariance': 'tied', 'training_time': 0.038336992263793945, 'bic': 91693.82153610907, 'aic': 91360.7695729839}, {'n_components': 3, 'covariance': 'tied', 'training_time': 0.06336498260498047, 'bic': 88272.49010016333, 'aic': 87882.88214329991}, {'n_components': 4, 'covariance': 'tied', 'training_time': 0.15000700950622559, 'bic': 88207.0008103734, 'aic': 87760.83685977175}, {'n_components': 5, 'covariance': 'tied', 'training_time': 0.10244321823120117, 'bic': 87631.39960344428, 'aic': 87128.6796591044}, {'n_components': 6, 'covariance': 'tied', 'training_time': 0.13010883331298828, 'bic': 87248.22124160017, 'aic': 86688.94530352205}, {'n_components': 7, 'covariance': 'tied', 'training_time': 0.21553587913513184, 'bic': 86821.29596216188, 'aic': 86205.46403034552}, {'n_components': 8, 'covariance': 'tied', 'training_time': 0.23352909088134766, 'bic': 86618.5662553148, 'aic': 85946.17832976021}, {'n_components': 9, 'covariance': 'tied', 'training_time': 0.20770001411437988, 'bic': 86401.04386501497, 'aic': 85672.09994572215}, {'n_components': 10, 'covariance': 'tied', 'training_time': 0.15385198593139648, 'bic': 86343.56950738144, 'aic': 85558.06959435038}, {'n_components': 11, 'covariance': 'tied', 'training_time': 0.21319007873535156, 'bic': 86310.76449549448, 'aic': 85468.70858872519}, {'n_components': 12, 'covariance': 'tied', 'training_time': 0.19731616973876953, 'bic': 86556.98757988279, 'aic': 85658.37567937524}, {'n_components': 13, 'covariance': 'tied', 'training_time': 0.15798497200012207, 'bic': 86467.7928145904, 'aic': 85512.62492034462}, {'n_components': 14, 'covariance': 'tied', 'training_time': 0.18618488311767578, 'bic': 86415.65305443836, 'aic': 85403.92916645434}, {'n_components': 15, 'covariance': 'tied', 'training_time': 0.23292803764343262, 'bic': 86418.13639181874, 'aic': 85349.85651009649}, {'n_components': 16, 'covariance': 'tied', 'training_time': 0.251633882522583, 'bic': 85556.43300727071, 'aic': 84431.59713181022}, {'n_components': 17, 'covariance': 'tied', 'training_time': 0.3085513114929199, 'bic': 85650.6553090979, 'aic': 84469.26343989918}, {'n_components': 18, 'covariance': 'tied', 'training_time': 0.2902538776397705, 'bic': 85832.22490210127, 'aic': 84594.27703916431}, {'n_components': 19, 'covariance': 'tied', 'training_time': 0.27250099182128906, 'bic': 85677.85283477558, 'aic': 84383.34897810039}, {'n_components': 1, 'covariance': 'diag', 'training_time': 0.03341865539550781, 'bic': 92262.33116659737, 'aic': 92161.78717772939}, {'n_components': 2, 'covariance': 'diag', 'training_time': 0.059275150299072266, 'bic': 88947.5846437444, 'aic': 88740.2126667042}, {'n_components': 3, 'covariance': 'diag', 'training_time': 0.07323217391967773, 'bic': 87993.74100879738, 'aic': 87679.54104358496}, {'n_components': 4, 'covariance': 'diag', 'training_time': 0.07643795013427734, 'bic': 87300.70193168125, 'aic': 86879.6739782966}, {'n_components': 5, 'covariance': 'diag', 'training_time': 0.08115100860595703, 'bic': 87117.18041708691, 'aic': 86589.32447553004}, {'n_components': 6, 'covariance': 'diag', 'training_time': 0.13220787048339844, 'bic': 86566.90705822018, 'aic': 85932.22312849108}, {'n_components': 7, 'covariance': 'diag', 'training_time': 0.1776120662689209, 'bic': 86411.07795427601, 'aic': 85669.56603637469}, {'n_components': 8, 'covariance': 'diag', 'training_time': 0.09589004516601562, 'bic': 86226.17674196813, 'aic': 85377.83683589457}, {'n_components': 9, 'covariance': 'diag', 'training_time': 0.11591410636901855, 'bic': 86019.55879228021, 'aic': 85064.39089803443}, {'n_components': 10, 'covariance': 'diag', 'training_time': 0.14848685264587402, 'bic': 85858.62965943693, 'aic': 84796.63377701893}, {'n_components': 11, 'covariance': 'diag', 'training_time': 0.10702395439147949, 'bic': 86074.51509176957, 'aic': 84905.69122117935}, {'n_components': 12, 'covariance': 'diag', 'training_time': 0.11616992950439453, 'bic': 85833.57773177729, 'aic': 84557.92587301484}, {'n_components': 13, 'covariance': 'diag', 'training_time': 0.15315008163452148, 'bic': 85528.90700843334, 'aic': 84146.42716149866}, {'n_components': 14, 'covariance': 'diag', 'training_time': 0.2364978790283203, 'bic': 85437.27181200888, 'aic': 83947.96397690199}, {'n_components': 15, 'covariance': 'diag', 'training_time': 0.18488717079162598, 'bic': 85560.95041274502, 'aic': 83964.8145894659}, {'n_components': 16, 'covariance': 'diag', 'training_time': 0.2369999885559082, 'bic': 85373.68332546159, 'aic': 83670.71951401024}, {'n_components': 17, 'covariance': 'diag', 'training_time': 0.1982729434967041, 'bic': 85597.39775696203, 'aic': 83787.60595733846}, {'n_components': 18, 'covariance': 'diag', 'training_time': 0.2130727767944336, 'bic': 85400.47373506929, 'aic': 83483.85394727348}, {'n_components': 19, 'covariance': 'diag', 'training_time': 0.21783709526062012, 'bic': 85571.8535136342, 'aic': 83548.40573766617}, {'n_components': 1, 'covariance': 'spherical', 'training_time': 0.023814916610717773, 'bic': 95761.9270658733, 'aic': 95705.37107213507}, {'n_components': 2, 'covariance': 'spherical', 'training_time': 0.03525209426879883, 'bic': 92405.93955061704, 'aic': 92286.54356383631}, {'n_components': 3, 'covariance': 'spherical', 'training_time': 0.0720210075378418, 'bic': 91626.86839994072, 'aic': 91444.63242011752}, {'n_components': 4, 'covariance': 'spherical', 'training_time': 0.046878814697265625, 'bic': 89100.28703028071, 'aic': 88855.21105741501}, {'n_components': 5, 'covariance': 'spherical', 'training_time': 0.0771939754486084, 'bic': 88679.87610318525, 'aic': 88371.96013727707}, {'n_components': 6, 'covariance': 'spherical', 'training_time': 0.0748448371887207, 'bic': 88501.82559578815, 'aic': 88131.06963683749}, {'n_components': 7, 'covariance': 'spherical', 'training_time': 0.08033609390258789, 'bic': 87966.58208325465, 'aic': 87532.9861312615}, {'n_components': 8, 'covariance': 'spherical', 'training_time': 0.07017183303833008, 'bic': 87686.5294344908, 'aic': 87190.09348945518}, {'n_components': 9, 'covariance': 'spherical', 'training_time': 0.09947896003723145, 'bic': 87301.58134632283, 'aic': 86742.3054082447}, {'n_components': 10, 'covariance': 'spherical', 'training_time': 0.0856468677520752, 'bic': 87183.77696318674, 'aic': 86561.66103206614}, {'n_components': 11, 'covariance': 'spherical', 'training_time': 0.1170198917388916, 'bic': 87066.540916732, 'aic': 86381.58499256891}, {'n_components': 12, 'covariance': 'spherical', 'training_time': 0.10957622528076172, 'bic': 86835.46736613188, 'aic': 86087.67144892631}, {'n_components': 13, 'covariance': 'spherical', 'training_time': 0.10770010948181152, 'bic': 86849.47356220044, 'aic': 86038.83765195237}, {'n_components': 14, 'covariance': 'spherical', 'training_time': 0.10228300094604492, 'bic': 86824.97189658115, 'aic': 85951.4959932906}, {'n_components': 15, 'covariance': 'spherical', 'training_time': 0.20948410034179688, 'bic': 86469.3304894042, 'aic': 85533.01459307116}, {'n_components': 16, 'covariance': 'spherical', 'training_time': 0.1722862720489502, 'bic': 86320.36180548444, 'aic': 85321.20591610893}, {'n_components': 17, 'covariance': 'spherical', 'training_time': 0.1403331756591797, 'bic': 86358.0157506367, 'aic': 85296.01986821869}, {'n_components': 18, 'covariance': 'spherical', 'training_time': 0.19645094871520996, 'bic': 86026.19824004186, 'aic': 84901.36236458138}, {'n_components': 19, 'covariance': 'spherical', 'training_time': 0.16737580299377441, 'bic': 86171.94134926038, 'aic': 84984.2654807574}]
 
 	covariances = list({x['covariance'] for x in results})
 
@@ -603,6 +603,59 @@ def em_wine_pca():
 	plt.tight_layout()
 	plt.savefig("figures/em_wine_pca")
 	plt.cla()
+
+
+
+def em_wine_ica():
+	''' ''' 
+
+	results = [{'n_components': 1, 'covariance': 'full', 'training_time': 0.08223080635070801, 'bic': -214354.5191969054, 'aic': -214762.78188294137}, {'n_components': 2, 'covariance': 'full', 'training_time': 0.14357829093933105, 'bic': -220559.2169164728, 'aic': -221382.02325294528}, {'n_components': 3, 'covariance': 'full', 'training_time': 0.13801288604736328, 'bic': -223053.12152080098, 'aic': -224290.47150771}, {'n_components': 4, 'covariance': 'full', 'training_time': 0.22015905380249023, 'bic': -225040.59290561985, 'aic': -226692.4865429654}, {'n_components': 5, 'covariance': 'full', 'training_time': 0.37624621391296387, 'bic': -225484.33232570466, 'aic': -227550.76961348671}, {'n_components': 6, 'covariance': 'full', 'training_time': 0.4203450679779053, 'bic': -226088.65227428655, 'aic': -228569.63321250514}, {'n_components': 7, 'covariance': 'full', 'training_time': 0.38785409927368164, 'bic': -226016.44447696893, 'aic': -228911.96906562403}, {'n_components': 8, 'covariance': 'full', 'training_time': 0.6181690692901611, 'bic': -226599.51978120554, 'aic': -229909.58802029717}, {'n_components': 9, 'covariance': 'full', 'training_time': 0.7945940494537354, 'bic': -226440.67212013327, 'aic': -230165.2840096614}, {'n_components': 10, 'covariance': 'full', 'training_time': 1.0400428771972656, 'bic': -226550.04190993478, 'aic': -230689.19744989945}, {'n_components': 11, 'covariance': 'full', 'training_time': 0.5357601642608643, 'bic': -226098.3676602206, 'aic': -230652.06685062178}, {'n_components': 12, 'covariance': 'full', 'training_time': 0.5986452102661133, 'bic': -226409.78679964322, 'aic': -231378.02964048093}, {'n_components': 13, 'covariance': 'full', 'training_time': 0.8855888843536377, 'bic': -226249.49540425895, 'aic': -231632.2818955332}, {'n_components': 14, 'covariance': 'full', 'training_time': 0.7461159229278564, 'bic': -225640.32315402784, 'aic': -231437.6532957386}, {'n_components': 15, 'covariance': 'full', 'training_time': 0.9565680027008057, 'bic': -225734.04262450637, 'aic': -231945.91641665366}, {'n_components': 16, 'covariance': 'full', 'training_time': 0.6628930568695068, 'bic': -224951.19675638204, 'aic': -231577.61419896584}, {'n_components': 17, 'covariance': 'full', 'training_time': 1.2401762008666992, 'bic': -224719.56845011478, 'aic': -231760.5295431351}, {'n_components': 18, 'covariance': 'full', 'training_time': 1.8094372749328613, 'bic': -225223.47403872994, 'aic': -232678.97878218678}, {'n_components': 19, 'covariance': 'full', 'training_time': 1.5013360977172852, 'bic': -224984.62690006846, 'aic': -232854.67529396183}, {'n_components': 1, 'covariance': 'tied', 'training_time': 0.0197451114654541, 'bic': -214354.51919690543, 'aic': -214762.7818829414}, {'n_components': 2, 'covariance': 'tied', 'training_time': 0.050988197326660156, 'bic': -214923.80301704278, 'aic': -215401.15631148484}, {'n_components': 3, 'covariance': 'tied', 'training_time': 0.04684591293334961, 'bic': -215307.53113831792, 'aic': -215853.97504116606}, {'n_components': 4, 'covariance': 'tied', 'training_time': 0.0633699893951416, 'bic': -219153.6310593618, 'aic': -219769.16557061602}, {'n_components': 5, 'covariance': 'tied', 'training_time': 0.13454294204711914, 'bic': -219509.4053047096, 'aic': -220194.0304243699}, {'n_components': 6, 'covariance': 'tied', 'training_time': 0.24039602279663086, 'bic': -220423.24648910333, 'aic': -221176.96221716973}, {'n_components': 7, 'covariance': 'tied', 'training_time': 0.16599106788635254, 'bic': -220399.4338195224, 'aic': -221222.2401559949}, {'n_components': 8, 'covariance': 'tied', 'training_time': 0.33941125869750977, 'bic': -220901.03027156967, 'aic': -221792.92721644824}, {'n_components': 9, 'covariance': 'tied', 'training_time': 0.1447439193725586, 'bic': -220809.8427722192, 'aic': -221770.8303255039}, {'n_components': 10, 'covariance': 'tied', 'training_time': 0.23585891723632812, 'bic': -221107.88764197702, 'aic': -222137.9658036678}, {'n_components': 11, 'covariance': 'tied', 'training_time': 0.21603178977966309, 'bic': -221689.9794814653, 'aic': -222789.14825156215}, {'n_components': 12, 'covariance': 'tied', 'training_time': 0.32500720024108887, 'bic': -221449.81105867785, 'aic': -222618.07043718078}, {'n_components': 13, 'covariance': 'tied', 'training_time': 0.5960156917572021, 'bic': -221642.64861861395, 'aic': -222879.99860552297}, {'n_components': 14, 'covariance': 'tied', 'training_time': 0.3682527542114258, 'bic': -221483.73698451102, 'aic': -222790.17757982612}, {'n_components': 15, 'covariance': 'tied', 'training_time': 0.41823482513427734, 'bic': -221591.93560541398, 'aic': -222967.46680913516}, {'n_components': 16, 'covariance': 'tied', 'training_time': 0.4120609760284424, 'bic': -222059.27418638254, 'aic': -223503.8959985098}, {'n_components': 17, 'covariance': 'tied', 'training_time': 0.490009069442749, 'bic': -222328.69871356722, 'aic': -223842.41113410058}, {'n_components': 18, 'covariance': 'tied', 'training_time': 0.6412880420684814, 'bic': -223119.20899591735, 'aic': -224702.01202485678}, {'n_components': 19, 'covariance': 'tied', 'training_time': 0.4284780025482178, 'bic': -222113.53523944796, 'aic': -223765.4288767935}, {'n_components': 1, 'covariance': 'diag', 'training_time': 0.01765298843383789, 'bic': -214727.1625949303, 'aic': -214852.78188294137}, {'n_components': 2, 'covariance': 'diag', 'training_time': 0.03344321250915527, 'bic': -221300.65242401016, 'aic': -221558.17196443284}, {'n_components': 3, 'covariance': 'diag', 'training_time': 0.05535602569580078, 'bic': -222362.4585926252, 'aic': -222751.8783854595}, {'n_components': 4, 'covariance': 'diag', 'training_time': 0.16776013374328613, 'bic': -222955.8489801284, 'aic': -223477.1690253743}, {'n_components': 5, 'covariance': 'diag', 'training_time': 0.11683177947998047, 'bic': -223436.68490695115, 'aic': -224089.90520460872}, {'n_components': 6, 'covariance': 'diag', 'training_time': 0.16058087348937988, 'bic': -223932.94456624045, 'aic': -224718.06511630962}, {'n_components': 7, 'covariance': 'diag', 'training_time': 0.19151806831359863, 'bic': -224090.05873486577, 'aic': -225007.07953734655}, {'n_components': 8, 'covariance': 'diag', 'training_time': 0.10960197448730469, 'bic': -224349.72780047386, 'aic': -225398.64885536628}, {'n_components': 9, 'covariance': 'diag', 'training_time': 0.15369081497192383, 'bic': -224605.27580855566, 'aic': -225786.09711585968}, {'n_components': 10, 'covariance': 'diag', 'training_time': 0.44869017601013184, 'bic': -224608.0854302013, 'aic': -225920.80698991695}, {'n_components': 11, 'covariance': 'diag', 'training_time': 0.5401310920715332, 'bic': -224889.917398945, 'aic': -226334.53921107226}, {'n_components': 12, 'covariance': 'diag', 'training_time': 1.383984088897705, 'bic': -224993.298752324, 'aic': -226569.8208168629}, {'n_components': 13, 'covariance': 'diag', 'training_time': 0.30257320404052734, 'bic': -225001.6818426065, 'aic': -226710.104159557}, {'n_components': 14, 'covariance': 'diag', 'training_time': 0.46319580078125, 'bic': -225007.67018288633, 'aic': -226847.99275224848}, {'n_components': 15, 'covariance': 'diag', 'training_time': 0.4393279552459717, 'bic': -224932.33011762626, 'aic': -226904.55293940002}, {'n_components': 16, 'covariance': 'diag', 'training_time': 0.3201711177825928, 'bic': -225183.6807352858, 'aic': -227287.8038094712}, {'n_components': 17, 'covariance': 'diag', 'training_time': 0.23603510856628418, 'bic': -225434.8808932658, 'aic': -227670.9042198628}, {'n_components': 18, 'covariance': 'diag', 'training_time': 0.47362613677978516, 'bic': -225296.09230820817, 'aic': -227664.01588721678}, {'n_components': 19, 'covariance': 'diag', 'training_time': 0.2901430130004883, 'bic': -225346.78705187546, 'aic': -227846.6108832957}, {'n_components': 1, 'covariance': 'spherical', 'training_time': 0.013477802276611328, 'bic': -214801.69127453535, 'aic': -214870.78188294143}, {'n_components': 2, 'covariance': 'spherical', 'training_time': 0.04814291000366211, 'bic': -217907.44150685018, 'aic': -218051.9036880629}, {'n_components': 3, 'covariance': 'spherical', 'training_time': 0.15097689628601074, 'bic': -218307.38009426012, 'aic': -218527.2138482795}, {'n_components': 4, 'covariance': 'spherical', 'training_time': 0.17149782180786133, 'bic': -218896.42014047998, 'aic': -219191.625467306}, {'n_components': 5, 'covariance': 'spherical', 'training_time': 0.09247112274169922, 'bic': -218961.60673247272, 'aic': -219332.18363210536}, {'n_components': 6, 'covariance': 'spherical', 'training_time': 0.0874948501586914, 'bic': -219626.57479364678, 'aic': -220072.52326608606}, {'n_components': 7, 'covariance': 'spherical', 'training_time': 0.15088176727294922, 'bic': -220083.01489739932, 'aic': -220604.33494264525}, {'n_components': 8, 'covariance': 'spherical', 'training_time': 0.1728661060333252, 'bic': -220439.25052834777, 'aic': -221035.94214640034}, {'n_components': 9, 'covariance': 'spherical', 'training_time': 0.1331958770751953, 'bic': -220817.26699420396, 'aic': -221489.33018506318}, {'n_components': 10, 'covariance': 'spherical', 'training_time': 0.08987188339233398, 'bic': -221382.4729491891, 'aic': -222129.90771285497}, {'n_components': 11, 'covariance': 'spherical', 'training_time': 0.09302830696105957, 'bic': -221518.55949829376, 'aic': -222341.36583476624}, {'n_components': 12, 'covariance': 'spherical', 'training_time': 0.0995020866394043, 'bic': -221731.9306800536, 'aic': -222630.10858933273}, {'n_components': 13, 'covariance': 'spherical', 'training_time': 0.11352682113647461, 'bic': -222119.09448782704, 'aic': -223092.6439699128}, {'n_components': 14, 'covariance': 'spherical', 'training_time': 0.11353015899658203, 'bic': -222158.81367803694, 'aic': -223207.73473292936}, {'n_components': 15, 'covariance': 'spherical', 'training_time': 0.1017920970916748, 'bic': -222413.50549758246, 'aic': -223537.79812528152}, {'n_components': 16, 'covariance': 'spherical', 'training_time': 0.13906407356262207, 'bic': -222235.6931278144, 'aic': -223435.3573283201}, {'n_components': 17, 'covariance': 'spherical', 'training_time': 0.22281193733215332, 'bic': -222704.83277283498, 'aic': -223979.8685461473}, {'n_components': 18, 'covariance': 'spherical', 'training_time': 0.191817045211792, 'bic': -222853.88728298523, 'aic': -224204.2946291042}, {'n_components': 19, 'covariance': 'spherical', 'training_time': 0.2955951690673828, 'bic': -222922.6197179866, 'aic': -224348.39863691223}]
+
+	covariances = list({x['covariance'] for x in results})
+
+	colors = ['r', 'g', 'b', 'c']
+
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx() 
+
+	for index, covariance in enumerate(covariances):
+
+		x = [x['n_components'] for x in results if x['covariance'] == covariance]
+		y = [y['aic'] for y in results if y['covariance'] == covariance]
+
+		ax1.plot(x, y, c=colors[index], ls="-")
+
+		y = [y['bic'] for y in results if y['covariance'] == covariance]
+
+		ax1.plot(x, y, c=colors[index], ls=":")
+
+		y = [y['training_time'] for y in results if y['covariance'] == covariance]
+
+		ax2.plot(x, y, c=colors[index], ls="-.", lw=1)
+
+
+	legend_items = [mlines.Line2D([0], [0], color='k', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='k', lw=2, ls=':'),
+					mlines.Line2D([0], [0], color='k', lw=2, ls='-.'),
+					mlines.Line2D([0], [0], color='r', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='g', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='b', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='c', lw=2, ls='-')]
+
+	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
+
+	
+	ax1.set_xlabel("No. of Components")
+	ax1.set_ylabel("AIC/BIC score")
+	ax2.set_ylabel("Training Time (s)")
+
+	plt.title("Expectation Maximization: Wine (ICA) \n AIC/BIC")
+	plt.legend(legend_items, legend_labels, loc="upper left")
+	plt.tight_layout()
+	plt.savefig("figures/em_wine_ica")
+	plt.cla()
+
+
 
 def kmeans_adult_ica():
 	''' '''
@@ -671,6 +724,7 @@ def kmeans_adult_ica():
 	plt.savefig('figures/km_adult_ica_elbow')
 	plt.cla()
 
+
 def em_adult_ica():
 	''' ''' 
 	
@@ -720,6 +774,342 @@ def em_adult_ica():
 	plt.savefig("figures/em_adult_ica")
 	plt.cla()
 
+def kmeans_wine_ica():
+	''' '''
+
+	scores = [{'n_clusters': 2, 'algorithm': 'full', 'silhouette_score': 0.09057311310854359, 'training_time': 0.29575514793395996, 'distortion': 0.045467307586602446, 'inertia': 9.242857564584904}, {'n_clusters': 2, 'algorithm': 'elkan', 'silhouette_score': 0.09057311310854359, 'training_time': 0.26241087913513184, 'distortion': 0.045467307586602446, 'inertia': 9.242857564584904}, {'n_clusters': 3, 'algorithm': 'full', 'silhouette_score': 0.09130044047082903, 'training_time': 0.28083205223083496, 'distortion': 0.043783392634359104, 'inertia': 8.63795599250589}, {'n_clusters': 3, 'algorithm': 'elkan', 'silhouette_score': 0.09130044047082903, 'training_time': 0.3233518600463867, 'distortion': 0.043783392634359104, 'inertia': 8.63795599250589}, {'n_clusters': 4, 'algorithm': 'full', 'silhouette_score': 0.1015099223406001, 'training_time': 0.24179720878601074, 'distortion': 0.042711323261746766, 'inertia': 7.965331352777578}, {'n_clusters': 4, 'algorithm': 'elkan', 'silhouette_score': 0.1015099223406001, 'training_time': 0.4976491928100586, 'distortion': 0.042711323261746766, 'inertia': 7.965331352777578}, {'n_clusters': 5, 'algorithm': 'full', 'silhouette_score': 0.1072891627874353, 'training_time': 0.27227306365966797, 'distortion': 0.041443112346914356, 'inertia': 7.515374969379658}, {'n_clusters': 5, 'algorithm': 'elkan', 'silhouette_score': 0.1072891627874353, 'training_time': 0.3963298797607422, 'distortion': 0.041443112346914356, 'inertia': 7.515374969379658}, {'n_clusters': 6, 'algorithm': 'full', 'silhouette_score': 0.11142745751167217, 'training_time': 0.3681330680847168, 'distortion': 0.04037769896297354, 'inertia': 7.123700799809569}, {'n_clusters': 6, 'algorithm': 'elkan', 'silhouette_score': 0.11142745751167217, 'training_time': 0.46759605407714844, 'distortion': 0.04037769896297354, 'inertia': 7.12370079980957}, {'n_clusters': 7, 'algorithm': 'full', 'silhouette_score': 0.11270108763418168, 'training_time': 0.35155415534973145, 'distortion': 0.03940988272019087, 'inertia': 6.759229728862173}, {'n_clusters': 7, 'algorithm': 'elkan', 'silhouette_score': 0.11270108763418168, 'training_time': 0.4012489318847656, 'distortion': 0.03940988272019087, 'inertia': 6.759229728862173}, {'n_clusters': 8, 'algorithm': 'full', 'silhouette_score': 0.11405367608125687, 'training_time': 0.31046223640441895, 'distortion': 0.038538443665491695, 'inertia': 6.452510479416043}, {'n_clusters': 8, 'algorithm': 'elkan', 'silhouette_score': 0.11405367608125687, 'training_time': 0.5007529258728027, 'distortion': 0.038538443665491695, 'inertia': 6.452510479416044}, {'n_clusters': 9, 'algorithm': 'full', 'silhouette_score': 0.11662019797162648, 'training_time': 0.37425899505615234, 'distortion': 0.03770634378854598, 'inertia': 6.170838350934316}, {'n_clusters': 9, 'algorithm': 'elkan', 'silhouette_score': 0.11662019797162648, 'training_time': 0.6893277168273926, 'distortion': 0.03770634378854598, 'inertia': 6.170838350934316}, {'n_clusters': 10, 'algorithm': 'full', 'silhouette_score': 0.11425577525167686, 'training_time': 0.3740999698638916, 'distortion': 0.03708219225978869, 'inertia': 5.959854092185724}, {'n_clusters': 10, 'algorithm': 'elkan', 'silhouette_score': 0.11425577525167686, 'training_time': 0.4201638698577881, 'distortion': 0.03708219225978869, 'inertia': 5.959854092185724}, {'n_clusters': 11, 'algorithm': 'full', 'silhouette_score': 0.11535176291150462, 'training_time': 0.3693821430206299, 'distortion': 0.036554092028589905, 'inertia': 5.757312302609758}, {'n_clusters': 11, 'algorithm': 'elkan', 'silhouette_score': 0.11535176291150462, 'training_time': 0.5749261379241943, 'distortion': 0.03655409202858992, 'inertia': 5.757312302609759}, {'n_clusters': 12, 'algorithm': 'full', 'silhouette_score': 0.10769437620623484, 'training_time': 0.44562196731567383, 'distortion': 0.036121207637955725, 'inertia': 5.635874233060249}, {'n_clusters': 12, 'algorithm': 'elkan', 'silhouette_score': 0.10769437620623484, 'training_time': 0.49500489234924316, 'distortion': 0.036121207637955725, 'inertia': 5.635874233060249}, {'n_clusters': 13, 'algorithm': 'full', 'silhouette_score': 0.1075000483983887, 'training_time': 0.48114991188049316, 'distortion': 0.0357049192572271, 'inertia': 5.528651785591641}, {'n_clusters': 13, 'algorithm': 'elkan', 'silhouette_score': 0.1075000483983887, 'training_time': 0.5225048065185547, 'distortion': 0.0357049192572271, 'inertia': 5.5286517855916415}, {'n_clusters': 14, 'algorithm': 'full', 'silhouette_score': 0.10637576451011296, 'training_time': 0.42496585845947266, 'distortion': 0.03533774076716913, 'inertia': 5.424758211189582}, {'n_clusters': 14, 'algorithm': 'elkan', 'silhouette_score': 0.10637576451011296, 'training_time': 0.5877640247344971, 'distortion': 0.03533774076716913, 'inertia': 5.424758211189582}, {'n_clusters': 15, 'algorithm': 'full', 'silhouette_score': 0.10672241827157024, 'training_time': 0.47919607162475586, 'distortion': 0.034992247033670015, 'inertia': 5.321406898099715}, {'n_clusters': 15, 'algorithm': 'elkan', 'silhouette_score': 0.10672241827157024, 'training_time': 0.7027280330657959, 'distortion': 0.034992247033670015, 'inertia': 5.321406898099715}, {'n_clusters': 16, 'algorithm': 'full', 'silhouette_score': 0.10377523177243818, 'training_time': 0.470045804977417, 'distortion': 0.03464901217846406, 'inertia': 5.22846029869299}, {'n_clusters': 16, 'algorithm': 'elkan', 'silhouette_score': 0.10377523177243818, 'training_time': 0.6191329956054688, 'distortion': 0.03464901217846406, 'inertia': 5.22846029869299}, {'n_clusters': 17, 'algorithm': 'full', 'silhouette_score': 0.10772140600163736, 'training_time': 0.49074530601501465, 'distortion': 0.034406812312058735, 'inertia': 5.146692548246002}, {'n_clusters': 17, 'algorithm': 'elkan', 'silhouette_score': 0.10772140600163736, 'training_time': 0.6877350807189941, 'distortion': 0.034406812312058735, 'inertia': 5.146692548246002}, {'n_clusters': 18, 'algorithm': 'full', 'silhouette_score': 0.11064506166860277, 'training_time': 0.47413015365600586, 'distortion': 0.03411843915686349, 'inertia': 5.070419908049813}, {'n_clusters': 18, 'algorithm': 'elkan', 'silhouette_score': 0.11064506166860277, 'training_time': 0.6407709121704102, 'distortion': 0.03411843915686349, 'inertia': 5.070419908049813}, {'n_clusters': 19, 'algorithm': 'full', 'silhouette_score': 0.10924074453447752, 'training_time': 0.472074031829834, 'distortion': 0.033863516901215814, 'inertia': 4.995928228502471}, {'n_clusters': 19, 'algorithm': 'elkan', 'silhouette_score': 0.10924074453447752, 'training_time': 0.575927734375, 'distortion': 0.033863516901215814, 'inertia': 4.995928228502472}]
+
+	algorithms = list({x['algorithm'] for x in scores})
+	colors = ['r', 'g']
+	line_styles = ['-', ':']
+
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx() 
+
+	for index, algo in enumerate(algorithms):
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['silhouette_score'] for y in scores if y['algorithm'] == algo]
+		
+		ax1.plot(x, y, color=colors[0], ls=line_styles[index])
+		ax1.set_ylabel("Silhouette Score", color=colors[0])
+		ax1.set_xlabel("Number of Clusters")
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['training_time'] for y in scores if y['algorithm'] == algo]
+
+		ax2.plot(x, y, color=colors[1], ls=line_styles[index])
+		ax2.set_ylabel("Training Time (s)", color=colors[1])
+
+	legend_items = [mlines.Line2D([0], [0], color='k', lw=2, ls='-'),
+		mlines.Line2D([0], [0], color='k', lw=2, ls=':')]
+
+	legend_labels = [algorithms[0], algorithms[1]]
+
+
+	plt.title("K Means: Wine (ICA) \n Silhouette")
+	plt.legend(legend_items, legend_labels, loc="upper right")
+	plt.tight_layout()
+	plt.savefig('figures/km_wine_ica_sil')
+	plt.cla()
+
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx() 
+
+	for index, algo in enumerate(algorithms):
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['distortion'] for y in scores if y['algorithm'] == algo]
+		
+		ax1.plot(x, y, color=colors[0], ls=line_styles[index])
+		ax1.set_ylabel("Distortion", color=colors[0])
+		ax1.set_xlabel("Number of Clusters")
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['inertia'] for y in scores if y['algorithm'] == algo]
+
+		ax2.plot(x, y, color=colors[1], ls=line_styles[index])
+		ax2.set_ylabel("Inertia", color=colors[1])
+
+	legend_items = [mlines.Line2D([0], [0], color='k', lw=2, ls='-'),
+		mlines.Line2D([0], [0], color='k', lw=2, ls=':')]
+
+	legend_labels = [algorithms[0], algorithms[1]]
+
+	plt.title("K Means: Wine (iCA) \n Elbow")
+	plt.legend(legend_items, legend_labels, loc="upper right")
+	plt.tight_layout()
+	plt.savefig('figures/km_wine_ica_elbow')
+	plt.cla()
+
+
+def adult_reconstruction_error():
+	''' ''' 
+
+	results = [{'n_components': 1, 'reconstruction_error': 100473429.53834943}, {'n_components': 2, 'reconstruction_error': 17623449.405405868}, {'n_components': 3, 'reconstruction_error': 21591523.78576281}, {'n_components': 4, 'reconstruction_error': 26596144.34903057}, {'n_components': 5, 'reconstruction_error': 16356962.77910273}, {'n_components': 6, 'reconstruction_error': 23176237.509543948}, {'n_components': 7, 'reconstruction_error': 11375251.252586138}, {'n_components': 8, 'reconstruction_error': 10947078.023808429}, {'n_components': 9, 'reconstruction_error': 22290597.04923112}, {'n_components': 10, 'reconstruction_error': 44705925.28239508}, {'n_components': 11, 'reconstruction_error': 71584241.26271145}, {'n_components': 12, 'reconstruction_error': 42543452.47638469}, {'n_components': 13, 'reconstruction_error': 29162941.571314916}, {'n_components': 14, 'reconstruction_error': 46262331.64163633}, {'n_components': 15, 'reconstruction_error': 21705213.764183264}, {'n_components': 16, 'reconstruction_error': 32459474.36997147}, {'n_components': 17, 'reconstruction_error': 22097745.48591609}, {'n_components': 18, 'reconstruction_error': 27995014.300517615}, {'n_components': 19, 'reconstruction_error': 15861676.425773608}, {'n_components': 20, 'reconstruction_error': 40247706.09586157}, {'n_components': 21, 'reconstruction_error': 51425632.7363778}, {'n_components': 22, 'reconstruction_error': 56317482.72965463}, {'n_components': 23, 'reconstruction_error': 8851753.672714634}, {'n_components': 24, 'reconstruction_error': 16598177.469997112}, {'n_components': 25, 'reconstruction_error': 29697390.531267617}, {'n_components': 26, 'reconstruction_error': 34282540.07828557}, {'n_components': 27, 'reconstruction_error': 27454327.937977847}, {'n_components': 28, 'reconstruction_error': 21444788.991912942}, {'n_components': 29, 'reconstruction_error': 28423548.083028514}, {'n_components': 30, 'reconstruction_error': 22550671.845011093}, {'n_components': 31, 'reconstruction_error': 16672711.352677759}, {'n_components': 32, 'reconstruction_error': 46663217.3711332}, {'n_components': 33, 'reconstruction_error': 39059319.57881969}, {'n_components': 34, 'reconstruction_error': 13159486.264916483}, {'n_components': 35, 'reconstruction_error': 34525913.63307098}, {'n_components': 36, 'reconstruction_error': 36633201.035651095}, {'n_components': 37, 'reconstruction_error': 25366792.71254824}, {'n_components': 38, 'reconstruction_error': 14260839.263438595}, {'n_components': 39, 'reconstruction_error': 13154653.633163922}, {'n_components': 40, 'reconstruction_error': 12636367.896508457}, {'n_components': 41, 'reconstruction_error': 34351369.07365988}, {'n_components': 42, 'reconstruction_error': 21596571.79827928}, {'n_components': 43, 'reconstruction_error': 46985940.72787806}, {'n_components': 44, 'reconstruction_error': 59288646.66941428}, {'n_components': 45, 'reconstruction_error': 18053260.442172255}, {'n_components': 46, 'reconstruction_error': 16694559.12756854}, {'n_components': 47, 'reconstruction_error': 28700529.854595732}, {'n_components': 48, 'reconstruction_error': 42281231.26012908}, {'n_components': 49, 'reconstruction_error': 44212270.388917245}, {'n_components': 50, 'reconstruction_error': 12811417.396683881}, {'n_components': 51, 'reconstruction_error': 42773889.879836045}, {'n_components': 52, 'reconstruction_error': 25046116.111364182}, {'n_components': 53, 'reconstruction_error': 21673770.572826773}, {'n_components': 54, 'reconstruction_error': 52080385.37850941}, {'n_components': 55, 'reconstruction_error': 46732360.5501821}, {'n_components': 56, 'reconstruction_error': 22341353.747407082}, {'n_components': 57, 'reconstruction_error': 26045627.320403885}, {'n_components': 58, 'reconstruction_error': 26555647.235836346}, {'n_components': 59, 'reconstruction_error': 19449761.0197313}, {'n_components': 60, 'reconstruction_error': 6549954.397139458}, {'n_components': 61, 'reconstruction_error': 16366895.237205004}, {'n_components': 62, 'reconstruction_error': 48958383.096775405}, {'n_components': 63, 'reconstruction_error': 50198323.19501473}, {'n_components': 64, 'reconstruction_error': 33138223.44447365}, {'n_components': 65, 'reconstruction_error': 23446015.88006789}, {'n_components': 66, 'reconstruction_error': 19182682.417969067}, {'n_components': 67, 'reconstruction_error': 28760423.225900434}, {'n_components': 68, 'reconstruction_error': 34551905.9829732}, {'n_components': 69, 'reconstruction_error': 26665709.14156936}, {'n_components': 70, 'reconstruction_error': 8001938.452425927}, {'n_components': 71, 'reconstruction_error': 35459904.94332186}, {'n_components': 72, 'reconstruction_error': 72693019.65857518}, {'n_components': 73, 'reconstruction_error': 67128613.2708954}, {'n_components': 74, 'reconstruction_error': 31644738.497691035}, {'n_components': 75, 'reconstruction_error': 33109059.907722432}, {'n_components': 76, 'reconstruction_error': 14019695.155458272}, {'n_components': 77, 'reconstruction_error': 7602735.530113142}, {'n_components': 78, 'reconstruction_error': 30300997.362656858}, {'n_components': 79, 'reconstruction_error': 19713445.11440673}, {'n_components': 80, 'reconstruction_error': 21126703.034003716}, {'n_components': 81, 'reconstruction_error': 28005526.674738746}, {'n_components': 82, 'reconstruction_error': 39486064.005931094}, {'n_components': 83, 'reconstruction_error': 20703783.253523596}, {'n_components': 84, 'reconstruction_error': 34807182.15940111}, {'n_components': 85, 'reconstruction_error': 17422213.27359551}, {'n_components': 86, 'reconstruction_error': 51273285.9663983}, {'n_components': 87, 'reconstruction_error': 22883554.01251864}, {'n_components': 88, 'reconstruction_error': 36979241.8382533}, {'n_components': 89, 'reconstruction_error': 20127739.323683742}, {'n_components': 90, 'reconstruction_error': 27641508.20856473}, {'n_components': 91, 'reconstruction_error': 3948843.730505711}, {'n_components': 92, 'reconstruction_error': 18699669.838682357}, {'n_components': 93, 'reconstruction_error': 30316817.04877514}, {'n_components': 94, 'reconstruction_error': 29152889.48678713}, {'n_components': 95, 'reconstruction_error': 31189331.377470613}, {'n_components': 96, 'reconstruction_error': 8653620.648475295}, {'n_components': 97, 'reconstruction_error': 37826260.66039956}, {'n_components': 98, 'reconstruction_error': 51118180.84926803}, {'n_components': 99, 'reconstruction_error': 27655987.895807188}]
+
+	x = [x['n_components'] for x in results]
+	y = [y['reconstruction_error'] for y in results]
+
+	plt.plot(x, y)
+	plt.xlabel("No. of Components")
+	plt.ylabel("Reconstruction Error")
+	plt.title("Randomized Projection \n Adult")
+	plt.tight_layout()
+	plt.savefig("figures/adult_rp")
+	plt.cla()
+
+def wine_reconstruction_error():
+
+	results = [{'n_components': 1, 'reconstruction_error': 3.498320367612651e-25}, {'n_components': 2, 'reconstruction_error': 5.285873095594323e-26}, {'n_components': 3, 'reconstruction_error': 2.325242871233319e-26}, {'n_components': 4, 'reconstruction_error': 7.251885232378767e-27}, {'n_components': 5, 'reconstruction_error': 1.8224986965661424e-26}, {'n_components': 6, 'reconstruction_error': 5.37605548539828e-26}, {'n_components': 7, 'reconstruction_error': 1.8346815509978844e-26}, {'n_components': 8, 'reconstruction_error': 3.1374401911060968e-27}, {'n_components': 9, 'reconstruction_error': 3.7040840156381375e-27}]
+	# results = [{'n_components': 1, 'reconstruction_error': 2.2216110737269734e-26}, {'n_components': 2, 'reconstruction_error': 1.3458390708156127e-23}, {'n_components': 3, 'reconstruction_error': 2.2724764619583465e-24}, {'n_components': 4, 'reconstruction_error': 7.993529909504242e-26}, {'n_components': 5, 'reconstruction_error': 3.615473332834437e-25}, {'n_components': 6, 'reconstruction_error': 5.502599021463136e-25}, {'n_components': 7, 'reconstruction_error': 1.5887668746795741e-24}, {'n_components': 8, 'reconstruction_error': 1.9382919228920747e-26}, {'n_components': 9, 'reconstruction_error': 2.78446125017654e-25}]
+
+	x = [x['n_components'] for x in results]
+	y = [y['reconstruction_error'] for y in results]
+
+	plt.plot(x, y)
+	plt.xlabel("No. of Components")
+	plt.ylabel("Reconstruction Error")
+	plt.title("Randomized Projection \n Wine")
+	plt.tight_layout()
+	plt.savefig("figures/wine_rp")
+	plt.cla()
+
+
+def kmeans_adult_rand():
+	
+	scores = [{'n_clusters': 2, 'algorithm': 'full', 'silhouette_score': 0.5877579431233132, 'training_time': 0.2763388156890869, 'distortion': 44655.91730970932, 'inertia': 87978623023768.81}, {'n_clusters': 2, 'algorithm': 'elkan', 'silhouette_score': 0.5877579431233132, 'training_time': 0.20975399017333984, 'distortion': 44655.91730970932, 'inertia': 87978623023768.81}, {'n_clusters': 3, 'algorithm': 'full', 'silhouette_score': 0.5536431872749599, 'training_time': 0.23723268508911133, 'distortion': 30541.804984751332, 'inertia': 47879127756002.19}, {'n_clusters': 3, 'algorithm': 'elkan', 'silhouette_score': 0.5536431872749599, 'training_time': 0.2215719223022461, 'distortion': 30541.804984751343, 'inertia': 47879127756002.19}, {'n_clusters': 4, 'algorithm': 'full', 'silhouette_score': 0.5601869969321311, 'training_time': 0.42570996284484863, 'distortion': 26151.814775306495, 'inertia': 31511290650779.395}, {'n_clusters': 4, 'algorithm': 'elkan', 'silhouette_score': 0.5601869969321311, 'training_time': 0.48711609840393066, 'distortion': 26151.814775306495, 'inertia': 31511290650779.39}, {'n_clusters': 5, 'algorithm': 'full', 'silhouette_score': 0.5337264059517104, 'training_time': 0.4247102737426758, 'distortion': 22462.235879487678, 'inertia': 22661564658868.07}, {'n_clusters': 5, 'algorithm': 'elkan', 'silhouette_score': 0.5337264059517104, 'training_time': 0.48005008697509766, 'distortion': 22462.235879487675, 'inertia': 22661564658868.07}, {'n_clusters': 6, 'algorithm': 'full', 'silhouette_score': 0.5460181958777099, 'training_time': 0.549659013748169, 'distortion': 17864.62144245438, 'inertia': 16389779999535.123}, {'n_clusters': 6, 'algorithm': 'elkan', 'silhouette_score': 0.5460181958777099, 'training_time': 0.620628833770752, 'distortion': 17864.621442454376, 'inertia': 16389779999535.123}, {'n_clusters': 7, 'algorithm': 'full', 'silhouette_score': 0.5488758332820022, 'training_time': 0.48998212814331055, 'distortion': 16132.51270511807, 'inertia': 12259653950367.28}, {'n_clusters': 7, 'algorithm': 'elkan', 'silhouette_score': 0.5488758332820022, 'training_time': 0.6885888576507568, 'distortion': 16132.512705118068, 'inertia': 12259653950367.28}, {'n_clusters': 8, 'algorithm': 'full', 'silhouette_score': 0.5416572526277954, 'training_time': 0.5600707530975342, 'distortion': 14850.888461913972, 'inertia': 9564141381656.385}, {'n_clusters': 8, 'algorithm': 'elkan', 'silhouette_score': 0.5416572526277954, 'training_time': 0.6584229469299316, 'distortion': 14850.888461913972, 'inertia': 9564141381656.385}, {'n_clusters': 9, 'algorithm': 'full', 'silhouette_score': 0.5362897174874279, 'training_time': 0.5870809555053711, 'distortion': 12911.006870477275, 'inertia': 7550139047158.216}, {'n_clusters': 9, 'algorithm': 'elkan', 'silhouette_score': 0.5362897174874279, 'training_time': 0.6637508869171143, 'distortion': 12911.006870477275, 'inertia': 7550139047158.218}]
+
+	algorithms = list({x['algorithm'] for x in scores})
+	colors = ['r', 'g']
+	line_styles = ['-', ':']
+
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx() 
+
+	for index, algo in enumerate(algorithms):
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['silhouette_score'] for y in scores if y['algorithm'] == algo]
+		
+		ax1.plot(x, y, color=colors[0], ls=line_styles[index])
+		ax1.set_ylabel("Silhouette Score", color=colors[0])
+		ax1.set_xlabel("Number of Clusters")
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['training_time'] for y in scores if y['algorithm'] == algo]
+
+		ax2.plot(x, y, color=colors[1], ls=line_styles[index])
+		ax2.set_ylabel("Training Time (s)", color=colors[1])
+
+	legend_items = [mlines.Line2D([0], [0], color='k', lw=2, ls='-'),
+		mlines.Line2D([0], [0], color='k', lw=2, ls=':')]
+
+	legend_labels = [algorithms[0], algorithms[1]]
+
+
+	plt.title("K Means: Adult (RP) \n Silhouette")
+	plt.legend(legend_items, legend_labels, loc="upper right")
+	plt.tight_layout()
+	plt.savefig('figures/km_adult_rp_sil')
+	plt.cla()
+
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx() 
+
+	for index, algo in enumerate(algorithms):
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['distortion'] for y in scores if y['algorithm'] == algo]
+		
+		ax1.plot(x, y, color=colors[0], ls=line_styles[index])
+		ax1.set_ylabel("Distortion", color=colors[0])
+		ax1.set_xlabel("Number of Clusters")
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['inertia'] for y in scores if y['algorithm'] == algo]
+
+		ax2.plot(x, y, color=colors[1], ls=line_styles[index])
+		ax2.set_ylabel("Inertia", color=colors[1])
+
+	legend_items = [mlines.Line2D([0], [0], color='k', lw=2, ls='-'),
+		mlines.Line2D([0], [0], color='k', lw=2, ls=':')]
+
+	legend_labels = [algorithms[0], algorithms[1]]
+
+	plt.title("K Means: Adult (RP) \n Elbow")
+	plt.legend(legend_items, legend_labels, loc="upper right")
+	plt.tight_layout()
+	plt.savefig('figures/km_adult_rp_elbow')
+	plt.cla()
+
+
+def em_adult_rand():
+	''' ''' 
+	
+	results = [{'n_components': 1, 'covariance': 'full', 'training_time': 0.03990626335144043, 'bic': 1988127.3098174515, 'aic': 1987841.509042551}, {'n_components': 2, 'covariance': 'full', 'training_time': 0.17064189910888672, 'bic': 1449480.4549558705, 'aic': 1448900.6876696437}, {'n_components': 3, 'covariance': 'full', 'training_time': 0.2543017864227295, 'bic': 1427557.8511648793, 'aic': 1426684.117367326}, {'n_components': 4, 'covariance': 'full', 'training_time': 0.40627598762512207, 'bic': 1403865.5119055917, 'aic': 1402697.811596712}, {'n_components': 5, 'covariance': 'full', 'training_time': 0.9084270000457764, 'bic': 1394184.503360434, 'aic': 1392722.8365402282}, {'n_components': 6, 'covariance': 'full', 'training_time': 0.8404979705810547, 'bic': 1403660.4375150597, 'aic': 1401904.8041835276}, {'n_components': 7, 'covariance': 'full', 'training_time': 1.0999510288238525, 'bic': 1401606.7371359346, 'aic': 1399557.1372930761}, {'n_components': 8, 'covariance': 'full', 'training_time': 1.5085630416870117, 'bic': 1391087.5361815104, 'aic': 1388743.9698273255}, {'n_components': 9, 'covariance': 'full', 'training_time': 2.2401950359344482, 'bic': 1381257.8343168092, 'aic': 1378620.3014512982}, {'n_components': 10, 'covariance': 'full', 'training_time': 3.172664165496826, 'bic': 1377739.0278802344, 'aic': 1374807.528503397}, {'n_components': 11, 'covariance': 'full', 'training_time': 3.244901180267334, 'bic': 1379074.6964622233, 'aic': 1375849.2305740595}, {'n_components': 12, 'covariance': 'full', 'training_time': 3.2419180870056152, 'bic': 1381448.8527395122, 'aic': 1377929.4203400223}, {'n_components': 13, 'covariance': 'full', 'training_time': 3.4340429306030273, 'bic': 1384546.5854705174, 'aic': 1380733.186559701}, {'n_components': 14, 'covariance': 'full', 'training_time': 4.152354001998901, 'bic': 1376287.1079049667, 'aic': 1372179.742482824}, {'n_components': 15, 'covariance': 'full', 'training_time': 7.1175618171691895, 'bic': 1373668.43168284, 'aic': 1369267.099749371}, {'n_components': 16, 'covariance': 'full', 'training_time': 6.3255250453948975, 'bic': 1374166.2437555466, 'aic': 1369470.9453107514}, {'n_components': 17, 'covariance': 'full', 'training_time': 4.624091148376465, 'bic': 1381877.236049762, 'aic': 1376887.9710936404}, {'n_components': 18, 'covariance': 'full', 'training_time': 6.02508807182312, 'bic': 1370189.962478691, 'aic': 1364906.731011243}, {'n_components': 19, 'covariance': 'full', 'training_time': 4.60038685798645, 'bic': 1375455.6082836841, 'aic': 1369878.4103049098}, {'n_components': 1, 'covariance': 'tied', 'training_time': 0.037741661071777344, 'bic': 1988127.3098174469, 'aic': 1987841.5090425464}, {'n_components': 2, 'covariance': 'tied', 'training_time': 0.16720795631408691, 'bic': 1985325.3894942293, 'aic': 1984974.2628279228}, {'n_components': 3, 'covariance': 'tied', 'training_time': 0.2557802200317383, 'bic': 1985407.3608594772, 'aic': 1984990.9083017649}, {'n_components': 4, 'covariance': 'tied', 'training_time': 0.2917191982269287, 'bic': 1984191.8440799543, 'aic': 1983710.0656308362}, {'n_components': 5, 'covariance': 'tied', 'training_time': 0.4214158058166504, 'bic': 1984262.5467220086, 'aic': 1983715.4423814847}, {'n_components': 6, 'covariance': 'tied', 'training_time': 0.5455970764160156, 'bic': 1983989.779083677, 'aic': 1983377.3488517473}, {'n_components': 7, 'covariance': 'tied', 'training_time': 0.6128249168395996, 'bic': 1983632.8303588508, 'aic': 1982955.0742355152}, {'n_components': 8, 'covariance': 'tied', 'training_time': 0.7129268646240234, 'bic': 1983384.311996866, 'aic': 1982641.2299821244}, {'n_components': 9, 'covariance': 'tied', 'training_time': 0.5913848876953125, 'bic': 1983494.4318878865, 'aic': 1982686.023981739}, {'n_components': 10, 'covariance': 'tied', 'training_time': 0.7939708232879639, 'bic': 1928539.3961459706, 'aic': 1927665.6623484173}, {'n_components': 11, 'covariance': 'tied', 'training_time': 2.1167140007019043, 'bic': 1909667.257561211, 'aic': 1908728.197872252}, {'n_components': 12, 'covariance': 'tied', 'training_time': 1.3224539756774902, 'bic': 1928603.4578621872, 'aic': 1927599.0722818223}, {'n_components': 13, 'covariance': 'tied', 'training_time': 0.7244529724121094, 'bic': 1983006.6181796214, 'aic': 1981936.9067078508}, {'n_components': 14, 'covariance': 'tied', 'training_time': 2.6791763305664062, 'bic': 1819125.3091729006, 'aic': 1817990.271809724}, {'n_components': 15, 'covariance': 'tied', 'training_time': 4.471181154251099, 'bic': 1815443.0040904665, 'aic': 1814242.640835884}, {'n_components': 16, 'covariance': 'tied', 'training_time': 0.8714859485626221, 'bic': 1982770.9477002441, 'aic': 1981505.2585542558}, {'n_components': 17, 'covariance': 'tied', 'training_time': 3.1725807189941406, 'bic': 1847632.4017989954, 'aic': 1846301.3867616013}, {'n_components': 18, 'covariance': 'tied', 'training_time': 5.093432188034058, 'bic': 1814641.9774208828, 'aic': 1813245.6364920828}, {'n_components': 19, 'covariance': 'tied', 'training_time': 4.599579095840454, 'bic': 1794010.8362830218, 'aic': 1792549.169462816}, {'n_components': 1, 'covariance': 'diag', 'training_time': 0.031751155853271484, 'bic': 3932023.885847534, 'aic': 3931909.565537574}, {'n_components': 2, 'covariance': 'diag', 'training_time': 0.08551907539367676, 'bic': 3782076.471515494, 'aic': 3781839.6651591477}, {'n_components': 3, 'covariance': 'diag', 'training_time': 0.17573809623718262, 'bic': 3632909.51935057, 'aic': 3632550.226947838}, {'n_components': 4, 'covariance': 'diag', 'training_time': 0.40384888648986816, 'bic': 3564537.152064117, 'aic': 3564055.373614999}, {'n_components': 5, 'covariance': 'diag', 'training_time': 1.1242728233337402, 'bic': 3486913.1790050943, 'aic': 3486308.9145095902}, {'n_components': 6, 'covariance': 'diag', 'training_time': 1.313385248184204, 'bic': 3433732.058560611, 'aic': 3433005.308018721}, {'n_components': 7, 'covariance': 'diag', 'training_time': 0.9906120300292969, 'bic': 3393227.223991152, 'aic': 3392377.987402876}, {'n_components': 8, 'covariance': 'diag', 'training_time': 1.8907196521759033, 'bic': 3357845.534607727, 'aic': 3356873.811973065}, {'n_components': 9, 'covariance': 'diag', 'training_time': 2.052122116088867, 'bic': 3330093.1554897903, 'aic': 3328998.9468087424}, {'n_components': 10, 'covariance': 'diag', 'training_time': 2.102185010910034, 'bic': 3309942.3910988295, 'aic': 3308725.6963713956}, {'n_components': 11, 'covariance': 'diag', 'training_time': 2.4173319339752197, 'bic': 3288855.5548391403, 'aic': 3287516.3740653205}, {'n_components': 12, 'covariance': 'diag', 'training_time': 2.6308209896087646, 'bic': 3269292.435317695, 'aic': 3267830.7684974894}, {'n_components': 13, 'covariance': 'diag', 'training_time': 2.8238041400909424, 'bic': 3257606.6654275786, 'aic': 3256022.512560987}, {'n_components': 14, 'covariance': 'diag', 'training_time': 2.9373481273651123, 'bic': 3230311.0636035185, 'aic': 3228604.424690541}, {'n_components': 15, 'covariance': 'diag', 'training_time': 3.171193838119507, 'bic': 3221670.4397980697, 'aic': 3219841.314838706}, {'n_components': 16, 'covariance': 'diag', 'training_time': 2.985321044921875, 'bic': 3198709.0108802617, 'aic': 3196757.399874512}, {'n_components': 17, 'covariance': 'diag', 'training_time': 3.1280369758605957, 'bic': 3192108.2976729544, 'aic': 3190034.200620819}, {'n_components': 18, 'covariance': 'diag', 'training_time': 3.606551170349121, 'bic': 3186955.0867559747, 'aic': 3184758.503657453}, {'n_components': 19, 'covariance': 'diag', 'training_time': 3.9892308712005615, 'bic': 3171235.0500783995, 'aic': 3168915.980933492}, {'n_components': 1, 'covariance': 'spherical', 'training_time': 0.03031015396118164, 'bic': 4314930.506800984, 'aic': 4314865.180909578}, {'n_components': 2, 'covariance': 'spherical', 'training_time': 0.08862590789794922, 'bic': 4162883.9766030903, 'aic': 4162745.159083853}, {'n_components': 3, 'covariance': 'spherical', 'training_time': 0.1992640495300293, 'bic': 4008755.843567724, 'aic': 4008543.5344206546}, {'n_components': 4, 'covariance': 'spherical', 'training_time': 0.5992300510406494, 'bic': 3933611.748534585, 'aic': 3933325.947759684}, {'n_components': 5, 'covariance': 'spherical', 'training_time': 0.7287569046020508, 'bic': 3868120.1361873504, 'aic': 3867760.843784618}, {'n_components': 6, 'covariance': 'spherical', 'training_time': 1.1709697246551514, 'bic': 3791430.5231891423, 'aic': 3790997.7391585787}, {'n_components': 7, 'covariance': 'spherical', 'training_time': 1.2649857997894287, 'bic': 3747896.6845829436, 'aic': 3747390.4089245484}, {'n_components': 8, 'covariance': 'spherical', 'training_time': 1.9140090942382812, 'bic': 3705741.2346543376, 'aic': 3705161.4673681105}, {'n_components': 9, 'covariance': 'spherical', 'training_time': 2.0146491527557373, 'bic': 3671355.0776957083, 'aic': 3670701.8187816497}, {'n_components': 10, 'covariance': 'spherical', 'training_time': 2.1220548152923584, 'bic': 3649073.468191722, 'aic': 3648346.717649832}, {'n_components': 11, 'covariance': 'spherical', 'training_time': 2.4895150661468506, 'bic': 3624622.2379012066, 'aic': 3623821.995731485}, {'n_components': 12, 'covariance': 'spherical', 'training_time': 2.5872912406921387, 'bic': 3610960.986202723, 'aic': 3610087.25240517}, {'n_components': 13, 'covariance': 'spherical', 'training_time': 2.7398319244384766, 'bic': 3588524.747259956, 'aic': 3587577.521834571}, {'n_components': 14, 'covariance': 'spherical', 'training_time': 2.8486859798431396, 'bic': 3555975.5085762306, 'aic': 3554954.791523014}, {'n_components': 15, 'covariance': 'spherical', 'training_time': 3.0768771171569824, 'bic': 3545479.9876463846, 'aic': 3544385.7789653367}, {'n_components': 16, 'covariance': 'spherical', 'training_time': 3.1308040618896484, 'bic': 3540326.77424279, 'aic': 3539159.0739339106}, {'n_components': 17, 'covariance': 'spherical', 'training_time': 3.3897979259490967, 'bic': 3516512.029803616, 'aic': 3515270.8378669047}, {'n_components': 18, 'covariance': 'spherical', 'training_time': 3.5048508644104004, 'bic': 3505785.3346668137, 'aic': 3504470.651102271}, {'n_components': 19, 'covariance': 'spherical', 'training_time': 3.850229024887085, 'bic': 3511540.9512108974, 'aic': 3510152.776018523}]
+
+	covariances = list({x['covariance'] for x in results})
+
+	colors = ['r', 'g', 'b', 'c']
+
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx() 
+
+	for index, covariance in enumerate(covariances):
+
+		x = [x['n_components'] for x in results if x['covariance'] == covariance]
+		y = [y['aic'] for y in results if y['covariance'] == covariance]
+
+		ax1.plot(x, y, c=colors[index], ls="-")
+
+		y = [y['bic'] for y in results if y['covariance'] == covariance]
+
+		ax1.plot(x, y, c=colors[index], ls=":")
+
+		y = [y['training_time'] for y in results if y['covariance'] == covariance]
+
+		ax2.plot(x, y, c=colors[index], ls="-.", lw=1)
+
+
+	legend_items = [mlines.Line2D([0], [0], color='k', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='k', lw=2, ls=':'),
+					mlines.Line2D([0], [0], color='k', lw=2, ls='-.'),
+					mlines.Line2D([0], [0], color='r', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='g', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='b', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='c', lw=2, ls='-')]
+
+	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
+
+	
+	ax1.set_xlabel("No. of Components")
+	ax1.set_ylabel("AIC/BIC score")
+	ax2.set_ylabel("Training Time (s)")
+
+	plt.title("Expectation Maximization: Wine (RP) \n AIC/BIC")
+	plt.legend(legend_items, legend_labels, loc="upper left")
+	plt.tight_layout()
+	plt.savefig("figures/em_wine_rp")
+	plt.cla()
+
+def em_wine_rand():
+	''' ''' 
+	results = [{'n_components': 1, 'covariance': 'full', 'training_time': 0.012521028518676758, 'bic': 93993.63862296559, 'aic': 93905.84052582388}, {'n_components': 2, 'covariance': 'full', 'training_time': 0.08620810508728027, 'bic': 91966.01099276975, 'aic': 91784.14350583334}, {'n_components': 3, 'covariance': 'full', 'training_time': 0.09399008750915527, 'bic': 91669.41940073697, 'aic': 91393.48252400587}, {'n_components': 4, 'covariance': 'full', 'training_time': 0.12461709976196289, 'bic': 91458.53041639863, 'aic': 91088.52414987284}, {'n_components': 5, 'covariance': 'full', 'training_time': 0.14298701286315918, 'bic': 91390.62428371023, 'aic': 90926.54862738975}, {'n_components': 6, 'covariance': 'full', 'training_time': 0.2515261173248291, 'bic': 91250.11111073788, 'aic': 90691.96606462271}, {'n_components': 7, 'covariance': 'full', 'training_time': 0.38713598251342773, 'bic': 91249.45807930427, 'aic': 90597.24364339441}, {'n_components': 8, 'covariance': 'full', 'training_time': 0.30610203742980957, 'bic': 91301.89337639506, 'aic': 90555.60955069051}, {'n_components': 9, 'covariance': 'full', 'training_time': 0.27027273178100586, 'bic': 91499.49166444036, 'aic': 90659.13844894111}, {'n_components': 10, 'covariance': 'full', 'training_time': 0.280869722366333, 'bic': 91621.73345504224, 'aic': 90687.3108497483}, {'n_components': 11, 'covariance': 'full', 'training_time': 0.3123469352722168, 'bic': 91656.53285734414, 'aic': 90628.04086225551}, {'n_components': 12, 'covariance': 'full', 'training_time': 0.5141439437866211, 'bic': 91490.72179326376, 'aic': 90368.16040838044}, {'n_components': 13, 'covariance': 'full', 'training_time': 0.5083870887756348, 'bic': 91673.64571217376, 'aic': 90457.01493749575}, {'n_components': 14, 'covariance': 'full', 'training_time': 0.5566740036010742, 'bic': 91607.46332782684, 'aic': 90296.76316335415}, {'n_components': 15, 'covariance': 'full', 'training_time': 0.54215407371521, 'bic': 91607.12915373345, 'aic': 90202.35959946606}, {'n_components': 16, 'covariance': 'full', 'training_time': 0.43018507957458496, 'bic': 91833.79259993431, 'aic': 90334.95365587223}, {'n_components': 17, 'covariance': 'full', 'training_time': 0.6380200386047363, 'bic': 91749.58676298223, 'aic': 90156.67842912546}, {'n_components': 18, 'covariance': 'full', 'training_time': 0.5981829166412354, 'bic': 91934.83823963953, 'aic': 90247.86051598807}, {'n_components': 19, 'covariance': 'full', 'training_time': 0.8029050827026367, 'bic': 91830.8986359228, 'aic': 90049.85152247665}, {'n_components': 1, 'covariance': 'tied', 'training_time': 0.014837026596069336, 'bic': 93993.63862296562, 'aic': 93905.8405258239}, {'n_components': 2, 'covariance': 'tied', 'training_time': 0.05394101142883301, 'bic': 93321.22985120423, 'aic': 93202.07529079763}, {'n_components': 3, 'covariance': 'tied', 'training_time': 0.04958915710449219, 'bic': 93946.1680960535, 'aic': 93795.65707238199}, {'n_components': 4, 'covariance': 'tied', 'training_time': 0.09724903106689453, 'bic': 93255.06540393092, 'aic': 93073.19791699451}, {'n_components': 5, 'covariance': 'tied', 'training_time': 0.12193894386291504, 'bic': 93283.31430792253, 'aic': 93070.09035772123}, {'n_components': 6, 'covariance': 'tied', 'training_time': 0.1938798427581787, 'bic': 93123.17156775203, 'aic': 92878.59115428582}, {'n_components': 7, 'covariance': 'tied', 'training_time': 0.24423718452453613, 'bic': 92963.56864585787, 'aic': 92687.63176912678}, {'n_components': 8, 'covariance': 'tied', 'training_time': 0.26476216316223145, 'bic': 92860.73160839819, 'aic': 92553.4382684022}, {'n_components': 9, 'covariance': 'tied', 'training_time': 0.19936108589172363, 'bic': 93517.62607313979, 'aic': 93178.9762698789}, {'n_components': 10, 'covariance': 'tied', 'training_time': 0.2441868782043457, 'bic': 93216.66354413335, 'aic': 92846.65727760756}, {'n_components': 11, 'covariance': 'tied', 'training_time': 0.2766261100769043, 'bic': 92700.48052992881, 'aic': 92299.11780013813}, {'n_components': 12, 'covariance': 'tied', 'training_time': 0.42633700370788574, 'bic': 92687.66741564817, 'aic': 92254.94822259259}, {'n_components': 13, 'covariance': 'tied', 'training_time': 0.40709495544433594, 'bic': 92614.81786470607, 'aic': 92150.74220838559}, {'n_components': 14, 'covariance': 'tied', 'training_time': 0.29068708419799805, 'bic': 92801.0426386408, 'aic': 92305.61051905544}, {'n_components': 15, 'covariance': 'tied', 'training_time': 0.4024519920349121, 'bic': 92739.72472828263, 'aic': 92212.93614543235}, {'n_components': 16, 'covariance': 'tied', 'training_time': 0.4986898899078369, 'bic': 92907.93638585125, 'aic': 92349.79133973608}, {'n_components': 17, 'covariance': 'tied', 'training_time': 0.6410238742828369, 'bic': 92868.91822155783, 'aic': 92279.41671217777}, {'n_components': 18, 'covariance': 'tied', 'training_time': 0.6064679622650146, 'bic': 92672.10492244452, 'aic': 92051.24694979955}, {'n_components': 19, 'covariance': 'tied', 'training_time': 0.6208150386810303, 'bic': 92895.33599145706, 'aic': 92243.1215555472}, {'n_components': 1, 'covariance': 'diag', 'training_time': 0.011480093002319336, 'bic': 142250.6667387091, 'aic': 142200.49639748526}, {'n_components': 2, 'covariance': 'diag', 'training_time': 0.016749858856201172, 'bic': 132759.66685506006, 'aic': 132653.0548799594}, {'n_components': 3, 'covariance': 'diag', 'training_time': 0.028443098068237305, 'bic': 128686.25346204365, 'aic': 128523.19985306618}, {'n_components': 4, 'covariance': 'diag', 'training_time': 0.030627965927124023, 'bic': 125724.59348356776, 'aic': 125505.09824071349}, {'n_components': 5, 'covariance': 'diag', 'training_time': 0.03908991813659668, 'bic': 123824.44814504315, 'aic': 123548.51126831205}, {'n_components': 6, 'covariance': 'diag', 'training_time': 0.033364295959472656, 'bic': 122211.66120328016, 'aic': 121879.28269267225}, {'n_components': 7, 'covariance': 'diag', 'training_time': 0.041877031326293945, 'bic': 121576.13171951161, 'aic': 121187.31157502689}, {'n_components': 8, 'covariance': 'diag', 'training_time': 0.07462191581726074, 'bic': 120567.53223541917, 'aic': 120122.27045705763}, {'n_components': 9, 'covariance': 'diag', 'training_time': 0.04475808143615723, 'bic': 119587.63950469774, 'aic': 119085.9360924594}, {'n_components': 10, 'covariance': 'diag', 'training_time': 0.05509018898010254, 'bic': 118929.11491404474, 'aic': 118370.96986792957}, {'n_components': 11, 'covariance': 'diag', 'training_time': 0.10640907287597656, 'bic': 118520.8786372044, 'aic': 117906.29195721241}, {'n_components': 12, 'covariance': 'diag', 'training_time': 0.09421396255493164, 'bic': 117827.81232399645, 'aic': 117156.78401012765}, {'n_components': 13, 'covariance': 'diag', 'training_time': 0.11804413795471191, 'bic': 117621.11695021077, 'aic': 116893.64700246515}, {'n_components': 14, 'covariance': 'diag', 'training_time': 0.0957949161529541, 'bic': 116861.92079064385, 'aic': 116078.00920902143}, {'n_components': 15, 'covariance': 'diag', 'training_time': 0.1855030059814453, 'bic': 116661.15534013776, 'aic': 115820.80212463852}, {'n_components': 16, 'covariance': 'diag', 'training_time': 0.09343314170837402, 'bic': 116149.65076013433, 'aic': 115252.85591075828}, {'n_components': 17, 'covariance': 'diag', 'training_time': 0.13312506675720215, 'bic': 115813.44898124674, 'aic': 114860.21249799387}, {'n_components': 18, 'covariance': 'diag', 'training_time': 0.16344690322875977, 'bic': 115791.2361064633, 'aic': 114781.55798933361}, {'n_components': 19, 'covariance': 'diag', 'training_time': 0.1563119888305664, 'bic': 115758.02245453716, 'aic': 114691.90270353066}, {'n_components': 1, 'covariance': 'spherical', 'training_time': 0.020754098892211914, 'bic': 150478.64491118398, 'aic': 150447.28844791907}, {'n_components': 2, 'covariance': 'spherical', 'training_time': 0.016163110733032227, 'bic': 139444.1724160499, 'aic': 139375.18819686712}, {'n_components': 3, 'covariance': 'spherical', 'training_time': 0.029618024826049805, 'bic': 133618.58672847605, 'aic': 133511.9747533754}, {'n_components': 4, 'covariance': 'spherical', 'training_time': 0.041882991790771484, 'bic': 128851.1243645766, 'aic': 128706.88463355806}, {'n_components': 5, 'covariance': 'spherical', 'training_time': 0.28427815437316895, 'bic': 125800.16537626853, 'aic': 125618.29788933213}, {'n_components': 6, 'covariance': 'spherical', 'training_time': 0.03384995460510254, 'bic': 123783.1656547566, 'aic': 123563.67041190232}, {'n_components': 7, 'covariance': 'spherical', 'training_time': 0.04411506652832031, 'bic': 122552.00201019211, 'aic': 122294.87901141995}, {'n_components': 8, 'covariance': 'spherical', 'training_time': 0.05025601387023926, 'bic': 121122.60489490077, 'aic': 120827.85414021074}, {'n_components': 9, 'covariance': 'spherical', 'training_time': 0.04669785499572754, 'bic': 120735.07200383785, 'aic': 120402.69349322993}, {'n_components': 10, 'covariance': 'spherical', 'training_time': 0.07346010208129883, 'bic': 119293.61017496609, 'aic': 118923.6039084403}, {'n_components': 11, 'covariance': 'spherical', 'training_time': 0.05668139457702637, 'bic': 119138.56907242692, 'aic': 118730.93504998327}, {'n_components': 12, 'covariance': 'spherical', 'training_time': 0.06197476387023926, 'bic': 118729.91689012363, 'aic': 118284.65511176208}, {'n_components': 13, 'covariance': 'spherical', 'training_time': 0.09756112098693848, 'bic': 118255.07945144303, 'aic': 117772.18991716362}, {'n_components': 14, 'covariance': 'spherical', 'training_time': 0.09946584701538086, 'bic': 118194.83625660291, 'aic': 117674.31896640561}, {'n_components': 15, 'covariance': 'spherical', 'training_time': 0.07572817802429199, 'bic': 117967.54426861201, 'aic': 117409.39922249684}, {'n_components': 16, 'covariance': 'spherical', 'training_time': 0.09941983222961426, 'bic': 117612.32366582839, 'aic': 117016.55086379535}, {'n_components': 17, 'covariance': 'spherical', 'training_time': 0.08683609962463379, 'bic': 117336.01974951045, 'aic': 116702.61919155953}, {'n_components': 18, 'covariance': 'spherical', 'training_time': 0.0865178108215332, 'bic': 116935.06581740773, 'aic': 116264.03750353893}, {'n_components': 19, 'covariance': 'spherical', 'training_time': 0.0907278060913086, 'bic': 116567.40482215871, 'aic': 115858.74875237205}]
+
+	covariances = list({x['covariance'] for x in results})
+
+	colors = ['r', 'g', 'b', 'c']
+
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx() 
+
+	for index, covariance in enumerate(covariances):
+
+		x = [x['n_components'] for x in results if x['covariance'] == covariance]
+		y = [y['aic'] for y in results if y['covariance'] == covariance]
+
+		ax1.plot(x, y, c=colors[index], ls="-")
+
+		y = [y['bic'] for y in results if y['covariance'] == covariance]
+
+		ax1.plot(x, y, c=colors[index], ls=":")
+
+		y = [y['training_time'] for y in results if y['covariance'] == covariance]
+
+		ax2.plot(x, y, c=colors[index], ls="-.", lw=1)
+
+
+	legend_items = [mlines.Line2D([0], [0], color='k', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='k', lw=2, ls=':'),
+					mlines.Line2D([0], [0], color='k', lw=2, ls='-.'),
+					mlines.Line2D([0], [0], color='r', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='g', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='b', lw=2, ls='-'),
+					mlines.Line2D([0], [0], color='c', lw=2, ls='-')]
+
+	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
+
+	
+	ax1.set_xlabel("No. of Components")
+	ax1.set_ylabel("AIC/BIC score")
+	ax2.set_ylabel("Training Time (s)")
+
+	plt.title("Expectation Maximization: Wine (RP) \n AIC/BIC")
+	plt.legend(legend_items, legend_labels, loc="upper left")
+	plt.tight_layout()
+	plt.savefig("figures/em_wine_rp")
+	plt.cla()
+
+
+def kmeans_wine_rand():
+	
+	scores = [{'n_clusters': 2, 'algorithm': 'full', 'silhouette_score': 0.5486871964678666, 'training_time': 0.18793821334838867, 'distortion': 29.318049898477714, 'inertia': 4996322.36816868}, {'n_clusters': 2, 'algorithm': 'elkan', 'silhouette_score': 0.5486871964678666, 'training_time': 0.06193184852600098, 'distortion': 29.318049898477714, 'inertia': 4996322.36816868}, {'n_clusters': 3, 'algorithm': 'full', 'silhouette_score': 0.47053772793858517, 'training_time': 0.15404796600341797, 'distortion': 22.90930465485205, 'inertia': 3015680.1301940265}, {'n_clusters': 3, 'algorithm': 'elkan', 'silhouette_score': 0.47053772793858517, 'training_time': 0.13863277435302734, 'distortion': 22.90930465485205, 'inertia': 3015680.130194027}, {'n_clusters': 4, 'algorithm': 'full', 'silhouette_score': 0.4439915502823269, 'training_time': 0.1557459831237793, 'distortion': 18.91054618874037, 'inertia': 2095474.5978663715}, {'n_clusters': 4, 'algorithm': 'elkan', 'silhouette_score': 0.4439915502823269, 'training_time': 0.11910486221313477, 'distortion': 18.91054618874037, 'inertia': 2095474.5978663715}, {'n_clusters': 5, 'algorithm': 'full', 'silhouette_score': 0.41943576711282116, 'training_time': 0.21718096733093262, 'distortion': 16.87623288677546, 'inertia': 1642557.0626928955}, {'n_clusters': 5, 'algorithm': 'elkan', 'silhouette_score': 0.41943576711282116, 'training_time': 0.2551591396331787, 'distortion': 16.87623288677546, 'inertia': 1642557.0626928955}, {'n_clusters': 6, 'algorithm': 'full', 'silhouette_score': 0.4020283417153079, 'training_time': 0.2447490692138672, 'distortion': 15.111810184843721, 'inertia': 1352476.7915434416}, {'n_clusters': 6, 'algorithm': 'elkan', 'silhouette_score': 0.4020283417153079, 'training_time': 0.20308613777160645, 'distortion': 15.111810184843721, 'inertia': 1352476.7915434416}, {'n_clusters': 7, 'algorithm': 'full', 'silhouette_score': 0.4022500375093383, 'training_time': 0.2140491008758545, 'distortion': 14.965327337817882, 'inertia': 1154853.5474858147}, {'n_clusters': 7, 'algorithm': 'elkan', 'silhouette_score': 0.4022500375093383, 'training_time': 0.2144629955291748, 'distortion': 14.965327337817882, 'inertia': 1154853.5474858147}, {'n_clusters': 8, 'algorithm': 'full', 'silhouette_score': 0.37716338260992266, 'training_time': 0.22510290145874023, 'distortion': 13.877671415242464, 'inertia': 995869.8683754439}, {'n_clusters': 8, 'algorithm': 'elkan', 'silhouette_score': 0.37716338260992266, 'training_time': 0.23108601570129395, 'distortion': 13.877671415242467, 'inertia': 995869.868375444}, {'n_clusters': 9, 'algorithm': 'full', 'silhouette_score': 0.3592708616870622, 'training_time': 0.28234434127807617, 'distortion': 13.131593767061629, 'inertia': 876760.6667183852}, {'n_clusters': 9, 'algorithm': 'elkan', 'silhouette_score': 0.3592708616870622, 'training_time': 0.3672659397125244, 'distortion': 13.131593767061627, 'inertia': 876760.6667183854}, {'n_clusters': 10, 'algorithm': 'full', 'silhouette_score': 0.336565633847698, 'training_time': 0.2546417713165283, 'distortion': 12.459987350264456, 'inertia': 794829.4335301451}, {'n_clusters': 10, 'algorithm': 'elkan', 'silhouette_score': 0.336565633847698, 'training_time': 0.2727549076080322, 'distortion': 12.459987350264456, 'inertia': 794829.4335301451}, {'n_clusters': 11, 'algorithm': 'full', 'silhouette_score': 0.324505659813503, 'training_time': 0.25842928886413574, 'distortion': 11.873325402852743, 'inertia': 730841.9120657741}, {'n_clusters': 11, 'algorithm': 'elkan', 'silhouette_score': 0.324505659813503, 'training_time': 0.2684009075164795, 'distortion': 11.873325402852746, 'inertia': 730841.9120657741}, {'n_clusters': 12, 'algorithm': 'full', 'silhouette_score': 0.3245991332074482, 'training_time': 0.283829927444458, 'distortion': 11.731875292427885, 'inertia': 672688.9738129249}, {'n_clusters': 12, 'algorithm': 'elkan', 'silhouette_score': 0.3245991332074482, 'training_time': 0.31682515144348145, 'distortion': 11.731875292427885, 'inertia': 672688.9738129249}, {'n_clusters': 13, 'algorithm': 'full', 'silhouette_score': 0.3066211687086786, 'training_time': 0.27567005157470703, 'distortion': 11.323432000969412, 'inertia': 629504.3201778487}, {'n_clusters': 13, 'algorithm': 'elkan', 'silhouette_score': 0.3066211687086786, 'training_time': 0.3021841049194336, 'distortion': 11.323432000969412, 'inertia': 629504.3201778487}, {'n_clusters': 14, 'algorithm': 'full', 'silhouette_score': 0.3074598474234134, 'training_time': 0.29931187629699707, 'distortion': 11.001380353313749, 'inertia': 588227.2678907495}, {'n_clusters': 14, 'algorithm': 'elkan', 'silhouette_score': 0.3074598474234134, 'training_time': 0.33479928970336914, 'distortion': 11.001380353313749, 'inertia': 588227.2678907494}, {'n_clusters': 15, 'algorithm': 'full', 'silhouette_score': 0.3027262690783409, 'training_time': 0.298856258392334, 'distortion': 10.681941694539185, 'inertia': 556171.6344314446}, {'n_clusters': 15, 'algorithm': 'elkan', 'silhouette_score': 0.3027262690783409, 'training_time': 0.3165321350097656, 'distortion': 10.681941694539185, 'inertia': 556171.6344314446}, {'n_clusters': 16, 'algorithm': 'full', 'silhouette_score': 0.298533151990037, 'training_time': 0.2886466979980469, 'distortion': 10.44383043932264, 'inertia': 529857.3457188712}, {'n_clusters': 16, 'algorithm': 'elkan', 'silhouette_score': 0.298533151990037, 'training_time': 0.35610103607177734, 'distortion': 10.44383043932264, 'inertia': 529857.3457188712}, {'n_clusters': 17, 'algorithm': 'full', 'silhouette_score': 0.2962255552295377, 'training_time': 0.3405451774597168, 'distortion': 10.15513340674314, 'inertia': 499303.24431291333}, {'n_clusters': 17, 'algorithm': 'elkan', 'silhouette_score': 0.2962255552295377, 'training_time': 0.4085550308227539, 'distortion': 10.15513340674314, 'inertia': 499303.24431291333}, {'n_clusters': 18, 'algorithm': 'full', 'silhouette_score': 0.2909615281701416, 'training_time': 0.3438541889190674, 'distortion': 9.87051482064628, 'inertia': 475256.15292312205}, {'n_clusters': 18, 'algorithm': 'elkan', 'silhouette_score': 0.2909615281701416, 'training_time': 0.3947310447692871, 'distortion': 9.870514820646282, 'inertia': 475256.15292312205}, {'n_clusters': 19, 'algorithm': 'full', 'silhouette_score': 0.2913155513000014, 'training_time': 0.3621349334716797, 'distortion': 9.743265608418154, 'inertia': 454849.22830643924}, {'n_clusters': 19, 'algorithm': 'elkan', 'silhouette_score': 0.2913155513000014, 'training_time': 0.3779289722442627, 'distortion': 9.743265608418152, 'inertia': 454849.22830643924}]
+
+
+	algorithms = list({x['algorithm'] for x in scores})
+	colors = ['r', 'g']
+	line_styles = ['-', ':']
+
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx() 
+
+	for index, algo in enumerate(algorithms):
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['silhouette_score'] for y in scores if y['algorithm'] == algo]
+		
+		ax1.plot(x, y, color=colors[0], ls=line_styles[index])
+		ax1.set_ylabel("Silhouette Score", color=colors[0])
+		ax1.set_xlabel("Number of Clusters")
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['training_time'] for y in scores if y['algorithm'] == algo]
+
+		ax2.plot(x, y, color=colors[1], ls=line_styles[index])
+		ax2.set_ylabel("Training Time (s)", color=colors[1])
+
+	legend_items = [mlines.Line2D([0], [0], color='k', lw=2, ls='-'),
+		mlines.Line2D([0], [0], color='k', lw=2, ls=':')]
+
+	legend_labels = [algorithms[0], algorithms[1]]
+
+
+	plt.title("K Means: Wine (RP) \n Silhouette")
+	plt.legend(legend_items, legend_labels, loc="upper right")
+	plt.tight_layout()
+	plt.savefig('figures/km_wine_rp_sil')
+	plt.cla()
+
+	fig, ax1 = plt.subplots()
+	ax2 = ax1.twinx() 
+
+	for index, algo in enumerate(algorithms):
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['distortion'] for y in scores if y['algorithm'] == algo]
+		
+		ax1.plot(x, y, color=colors[0], ls=line_styles[index])
+		ax1.set_ylabel("Distortion", color=colors[0])
+		ax1.set_xlabel("Number of Clusters")
+
+		x = [x['n_clusters'] for x in scores if x['algorithm'] == algo]
+		y = [y['inertia'] for y in scores if y['algorithm'] == algo]
+
+		ax2.plot(x, y, color=colors[1], ls=line_styles[index])
+		ax2.set_ylabel("Inertia", color=colors[1])
+
+	legend_items = [mlines.Line2D([0], [0], color='k', lw=2, ls='-'),
+		mlines.Line2D([0], [0], color='k', lw=2, ls=':')]
+
+	legend_labels = [algorithms[0], algorithms[1]]
+
+	plt.title("K Means: Wine (RP) \n Elbow")
+	plt.legend(legend_items, legend_labels, loc="upper right")
+	plt.tight_layout()
+	plt.savefig('figures/km_wine_rp_elbow')
+	plt.cla()
+
 
 
 if __name__ == '__main__':
@@ -733,6 +1123,7 @@ if __name__ == '__main__':
 	# em_adult_ica()
 	# kmeans_adult_rand()
 	# em_adult_rand()
+	# adult_reconstruction_error()
 
 
 
@@ -744,10 +1135,11 @@ if __name__ == '__main__':
 	# em_wine_pca()
 	# kmeans_wine_ica()
 	# em_wine_ica()
-	# kmeans_wine_rand()
-	# em_wine_rand()
+	kmeans_wine_rand()
+	em_wine_rand()
+	# wine_reconstruction_error()
 
 
-
+	pass
 
 
