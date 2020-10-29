@@ -7,10 +7,11 @@ from sklearn import metrics
 from sklearn.cluster import KMeans
 from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import StandardScaler
-from sklearn.decomposition import PCA, FastICA
+from sklearn.decomposition import PCA, FastICA, TruncatedSVD
 from sklearn.random_projection import johnson_lindenstrauss_min_dim, GaussianRandomProjection
 
 from scipy.spatial.distance import cdist 
+from scipy.stats import kurtosis
 
 import numpy as np 
 import pandas as pd
@@ -76,8 +77,10 @@ def expectation_max(train_x, n_components):
 	return results
 
 
-def apply_PCA(train_x, train_y, n):
+def apply_PCA(train_x, n):
 	''' ''' 
+
+	results = []
 
 	# Extract the feature names from the dataframe
 	features = train_x.columns
@@ -86,43 +89,51 @@ def apply_PCA(train_x, train_y, n):
 	# Apply the standard scaler to the dataframe. PCA expects this. 
 	scaled = StandardScaler().fit_transform(x)
 
-	if n == 2: 
-		pca = PCA(n_components=2)
-		principalComponents = pca.fit_transform(scaled)
+	for i in range(1, n):
+		pca = PCA(n_components = i)
+		reduced_df = pca.fit_transform(scaled)
 
-		principal_df = pd.DataFrame(data = principalComponents, columns = ['principal_component_' + str(i) for i in range(1, n+1)])
+		psuedo_inverse = np.linalg.pinv(pca.components_.T)
+		reconstructed = reduced_df.dot(psuedo_inverse)
 
-		principal_df['label'] = train_y
+		error = metrics.mean_squared_error(scaled, reconstructed)
 
-		plot.PCA_adult_2(principal_df)
-
-		return principal_df
-
-	elif n == 3: 
-		pca = PCA(n_components=3)
-		principalComponents = pca.fit_transform(scaled)
-
-		principal_df = pd.DataFrame(data = principalComponents, columns = ['principal_component_' + str(i) for i in range(1, n+1)])
-
-		principal_df['label'] = train_y
-
-		plot.PCA_adult_3(principal_df)
-
-		return principal_df
-
-	else: 
-		pca = PCA(.95)
-		principalComponents = pca.fit_transform(scaled)
-		principal_df = pd.DataFrame(data = principalComponents, columns = ['principal_component_' + str(i) for i in range(1, principalComponents.shape[1] + 1)])
+		results.append({"n_components": i, "reconstruction_error": error})
 
 
-		return principal_df
+	return results
+	
+	
+
+
+
+
+def pca_proj(train_x, n):
+	''' ''' 
+
+	rp = PCA(n_components = n)
+	reduced_df = rp.fit_transform(train_x)
+
+	return reduced_df
+
+
+
+def ica_proj(train_x, n):
+	''' ''' 
+
+	rp = FastICA(n_components = n)
+	reduced_df = rp.fit_transform(train_x)
+
+	return reduced_df
 
 
 
 def apply_ICA(train_x):
 	''' ''' 
 
+	results = []
+	algorithms = ['parallel', 'deflation']
+
 	# Extract the feature names from the dataframe
 	features = train_x.columns
 	x = train_x.loc[:, features].values
@@ -130,13 +141,18 @@ def apply_ICA(train_x):
 	# Apply the standard scaler to the dataframe. PCA expects this. 
 	scaled = StandardScaler().fit_transform(x)
 
+	for algorithm in algorithms:
+		for i in range(1, 10):
+			ica = FastICA(n_components=i, algorithm=algorithm)
+			independent_components = ica.fit_transform(scaled)
+			independent_df = pd.DataFrame(data = independent_components, columns = ['independent_component_' + str(i) for i in range(1, independent_components.shape[1] + 1)])
 
-	ica = FastICA(n_components=10)
-	independent_components = ica.fit_transform(scaled)
-	independent_df = pd.DataFrame(data = independent_components, columns = ['independent_component_' + str(i) for i in range(1, independent_components.shape[1] + 1)])
+			kurt = independent_df.kurtosis(axis=0).mean()
 
+			results.append({'n_components': i, 'algorithm': algorithm, 'avg_kurtosis': kurt})
 
-	return independent_df
+	return results
+
 
 
 def rand_proj_reconstruction_error(train_x, n):
@@ -173,26 +189,57 @@ def rand_proj(train_x, n):
 	return reduced_df
 
 
+def apply_svd(train_x, n):
+
+	results = []
+
+	algorithms = ['randomized', 'arpack']
+
+	for algorithm in algorithms:
+		svd = TruncatedSVD(n_components=n, algorithm=algorithm)
+		svd.fit_transform(train_x.astype("float"))
+
+		results.append({'algorithm': algorithm, 'n_components': n, 'explained_variance': list(svd.explained_variance_ratio_)})
+
+	return results
+
+def svd_proj(train_x, n):
+	''' ''' 
+
+	svd = TruncatedSVD(n_components=n)
+	reduced_df = svd.fit_transform(train_x.astype("float"))
+
+	return reduced_df
+
+
+
+
 
 
 if __name__ == '__main__':
 	# Adult Dataset
 	# train_x, train_y, test_x, test_y = data_adult.main('adult_data.csv')
+	# print(type(train_x))
 	# print(kmeans(train_x, 10))
 	# print(expectation_max(train_x, 20))
-	# apply_PCA(train_x, train_y, 3)
-	# pca_adult = apply_PCA(train_x, train_y, 4)
-	# print(pca_adult.shape)
-	# print(kmeans(pca_adult, 200))
-	# print(expectation_max(pca_adult, 20))
-	# ica_adult = apply_ICA(train_x)
-	# print(kmeans(ica_adult, 20))
-	# print(expectation_max(ica_adult, 20))
+	# print(apply_PCA(train_x, 100)) ### 71 components because <20% reconstruction error
+	# pca_projection = pca_proj(train_x, 71)
+	# print(kmeans(pca_projection, 10))
+	# print(expectation_max(pca_projection, 10))
+	# ica_adult = apply_ICA(train_x) ## Kurtosis of 0 occurs around 2 components 
+	# print(ica_adult)
+	# ica_projection = ica_proj(train_x, 2)
+	# print(kmeans(ica_projection, 20)) ## 2 clusters has a great silhouette score
+	# print(expectation_max(ica_projection, 20))
 	# rand_proj = rand_proj_reconstruction_error(train_x, 100)
 	# print(rand_proj) # min occurs around 7
 	# rp_reduced = rand_proj(train_x, 7)
 	# print(kmeans(rp_reduced, 10))
 	# print(expectation_max(rp_reduced, 20))
+	# print(apply_svd(train_x, 10)) # explained variance occurs at 1 component, either algorithm
+	# svd_reduced = svd_proj(train_x, 1)
+	# print(kmeans(svd_reduced, 10))
+	# print(expectation_max(svd_reduced, 10))
 
 
 
@@ -200,18 +247,26 @@ if __name__ == '__main__':
 	train_x, train_y, test_x, test_y = data_wine.main('winequality-white.csv')
 	# # print(kmeans(train_x, 20))
 	# # print(expectation_max(train_x, 20))
-	# pca_wine = apply_PCA(train_x, train_y, 4)
+	# print(apply_PCA(train_x, 10))
+	pca_wine = pca_proj(train_x, 6)
 	# # print(pca_wine.shape)
-	# print(kmeans(pca_wine, 25))
-	# print(expectation_max(pca_wine, 20))
-	# ica_wine = apply_ICA(train_x)
-	# print(kmeans(ica_wine, 20))
-	# print(expectation_max(ica_wine, 20))
+	# pca_projection()
+	print(kmeans(pca_wine, 10))
+	print(expectation_max(pca_wine, 10))
+	# ica_wine = apply_ICA(train_x) ### kurtosis of 0 doesn't occur, 1 to 3 all around 1. 
+	# print(ica_wine)
+	# ica_projection = ica_proj(train_x, 2)
+	# print(kmeans(ica_projection, 20))
+	# print(expectation_max(ica_projection, 20))
 	# rand_proj = rand_proj_reconstruction_error(train_x, 10) 
 	# print(rand_proj) # min occurs around 4
 	# rp_reduced = rand_proj(train_x, 4)
 	# print(kmeans(rp_reduced, 20))
 	# print(expectation_max(rp_reduced, 20))
+	# print(apply_svd(train_x, 9)) # explained variance occurs at 2 components, either algorithm
+	# svd_reduced = svd_proj(train_x, 2)
+	# print(kmeans(svd_reduced, 10))
+	# print(expectation_max(svd_reduced, 10))
 
 
 	pass 
