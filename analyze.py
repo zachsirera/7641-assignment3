@@ -9,6 +9,7 @@ from sklearn.mixture import GaussianMixture
 from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA, FastICA, TruncatedSVD
 from sklearn.random_projection import johnson_lindenstrauss_min_dim, GaussianRandomProjection
+from sklearn.neural_network import MLPClassifier
 
 from scipy.spatial.distance import cdist 
 from scipy.stats import kurtosis
@@ -75,6 +76,24 @@ def expectation_max(train_x, n_components):
 
 
 	return results
+
+
+def apply_kmeans(train_x, n, algo):
+
+	classifier = KMeans(n_clusters = n, random_state = 0, algorithm = algo)
+	classifier.fit_predict(train_x)
+
+	return classifier
+
+
+def apply_em(train_x, n, covariance_type):
+	''' ''' 
+
+	classifier = GaussianMixture(n_components = n, covariance_type = covariance_type, tol=0.001, reg_covar=1e-06, max_iter=100, n_init=1, init_params='kmeans', 
+				weights_init=None, means_init=None, precisions_init=None, random_state=None, warm_start=False, verbose=0, verbose_interval=10)
+	labels = classifier.fit_predict(train_x)
+
+	return labels
 
 
 def apply_PCA(train_x, n):
@@ -160,21 +179,25 @@ def rand_proj_reconstruction_error(train_x, n):
 
 	results = [] 
 
-	for i in range(1, n):
+	for i in range(1, n, 10):
 
-		rand_proj = GaussianRandomProjection(n_components=n)
-		reduced_df = rand_proj.fit_transform(train_x)
+		for j in range(1, 11):
+
+			error = 0
+
+			rand_proj = GaussianRandomProjection(n_components=n)
+			reduced_df = rand_proj.fit_transform(train_x)
+			
+			psuedo_inverse = np.linalg.pinv(rand_proj.components_.T)
+			reconstructed = reduced_df.dot(psuedo_inverse)
+
+			error += metrics.mean_squared_error(train_x, reconstructed)
+			# # error = (np.linalg.norm(train_x - reconstructed) ** 2) / len(train_x)
+			# # error = np.sum(np.square(train_x - reconstructed))
+			# error = np.mean((train_x - reconstructed)**2)
+			# error =  ((train_x - reconstructed) ** 2).sum(1).mean()
 		
-		psuedo_inverse = np.linalg.pinv(rand_proj.components_.T)
-		reconstructed = reduced_df.dot(psuedo_inverse)
-
-		error = metrics.mean_squared_error(train_x, reconstructed)
-		# # error = (np.linalg.norm(train_x - reconstructed) ** 2) / len(train_x)
-		# # error = np.sum(np.square(train_x - reconstructed))
-		# error = np.mean((train_x - reconstructed)**2)
-		# error =  ((train_x - reconstructed) ** 2).sum(1).mean()
-	
-		results.append({"n_components": i, "reconstruction_error": error})
+		results.append({"n_components": i, "reconstruction_error": error / 10})
 
 
 	return results
@@ -213,6 +236,189 @@ def svd_proj(train_x, n):
 
 
 
+def apply_nn(train_x, train_y, test_x, test_y): 
+	''' ''' 
+
+	algs = ['none', 'pca', 'ica', 'rp', 'svd']
+	results = []
+
+	train_pca_projection = pca_proj(train_x, 6)
+	train_ica_projection = ica_proj(train_x, 3)
+	train_rp_projection = rand_proj(train_x, 6)
+	train_svd_projection = svd_proj(train_x, 2)
+
+
+	all_train_projections = [train_x, train_pca_projection, train_ica_projection, train_rp_projection, train_svd_projection] # 
+
+	test_pca_projection = pca_proj(test_x, 6)
+	test_ica_projection = ica_proj(test_x, 3)
+	test_rp_projection = rand_proj(test_x, 6)
+	test_svd_projection = svd_proj(test_x, 2)
+
+	all_test_projections = [test_x, test_pca_projection, test_ica_projection, test_rp_projection, test_svd_projection] # 
+
+	for index, train_projection in enumerate(all_train_projections):
+
+		classifier = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(8, 6), random_state=1, max_iter=10000)
+		fit_start = time.time()
+		classifier.fit(train_projection, train_y.values.ravel())
+		fit_end = time.time() - fit_start
+		predictions = classifier.predict(all_test_projections[index])
+
+		print(algs[index])
+		print(metrics.classification_report(test_y.values.ravel(), predictions, zero_division=0))
+
+		count = 0
+		correct = 0
+
+		for jindex, prediction in enumerate(predictions):
+			if prediction == test_y.values.ravel()[jindex]:
+				correct += 1
+
+			count += 1
+
+		results.append({'alg': algs[index], 'accuracy': correct / count, 'training_time': fit_end, "iterations": classifier.n_iter_})
+
+	return results
+
+
+def apply_kmeans_nn(train_x, train_y, test_x, test_y):
+	''' ''' 
+
+	algs = ['none', 'pca', 'ica', 'rp', 'svd']
+	cluster_params = [{'n_clusters': 5, 'algorithm': 'full'}, {'n_clusters': 10, 'algorithm': 'elkan'}, {'n_clusters': 7, 'algorithm': 'full'}, {'n_clusters': 2, 'algorithm': 'elkan'}]
+	results = []
+
+	train_pca_projection = pca_proj(train_x, 6)
+	train_ica_projection = ica_proj(train_x, 3)
+	train_rp_projection = rand_proj(train_x, 6)
+	train_svd_projection = svd_proj(train_x, 2)
+
+	all_train_projections = [train_pca_projection, train_ica_projection, train_rp_projection, train_svd_projection]
+	full_train = [train_x] + [np.append(projection, pd.get_dummies(apply_kmeans(projection, cluster_params[index]['n_clusters'], cluster_params[index]['algorithm']).labels_).values, axis=1) for index, projection in enumerate(all_train_projections)]
+
+	test_pca_projection = pca_proj(test_x, 6)
+	test_ica_projection = ica_proj(test_x, 3)
+	test_rp_projection = rand_proj(test_x, 6)
+	test_svd_projection = svd_proj(test_x, 2)
+
+	all_test_projections = [test_pca_projection, test_ica_projection, test_rp_projection, test_svd_projection]
+	full_test = [test_x] + [np.append(projection, pd.get_dummies(apply_kmeans(projection, cluster_params[index]['n_clusters'], cluster_params[index]['algorithm']).labels_).values, axis=1) for index, projection in enumerate(all_test_projections)]
+
+
+	for index, projection in enumerate(full_train):
+
+		classifier = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(8, 6), random_state=1, max_iter=10000)
+		fit_start = time.time()
+		classifier.fit(projection, train_y.values.ravel())
+		fit_end = time.time() - fit_start
+		predictions = classifier.predict(full_test[index])
+
+		print(algs[index])
+		print(metrics.classification_report(test_y.values.ravel(), predictions, zero_division=0))
+
+		count = 0
+		correct = 0
+
+		for jindex, prediction in enumerate(predictions):
+			if prediction == test_y.values.ravel()[jindex]:
+				correct += 1
+
+			count += 1
+
+		results.append({'alg': algs[index], 'accuracy': correct / count, 'training_time': fit_end, "iterations": classifier.n_iter_})
+
+	return results
+
+
+def apply_em_nn(train_x, train_y, test_x, test_y):
+	''' ''' 
+
+	algs = ['none', 'pca', 'ica', 'rp', 'svd']
+	cluster_params = [{'n_clusters': 2, 'covariance_type': 'full'}, {'n_clusters': 7, 'covariance_type': 'full'}, {'n_clusters': 2, 'covariance_type': 'full'}, {'n_clusters': 2, 'covariance_type': 'diag'}]
+
+	results = []
+
+	train_pca_projection = pca_proj(train_x, 6)
+	train_ica_projection = ica_proj(train_x, 3)
+	train_rp_projection = rand_proj(train_x, 6)
+	train_svd_projection = svd_proj(train_x, 2)
+
+	all_train_projections = [train_pca_projection, train_ica_projection, train_rp_projection, train_svd_projection]
+	full_train = [train_x] + [np.append(projection, pd.get_dummies(apply_em(projection, cluster_params[index]['n_clusters'], cluster_params[index]['covariance_type'])).values, axis=1) for index, projection in enumerate(all_train_projections)]
+
+	test_pca_projection = pca_proj(test_x, 6)
+	test_ica_projection = ica_proj(test_x, 3)
+	test_rp_projection = rand_proj(test_x, 6)
+	test_svd_projection = svd_proj(test_x, 2)
+
+	all_test_projections = [test_pca_projection, test_ica_projection, test_rp_projection, test_svd_projection]
+	full_test = [test_x] + [np.append(projection, pd.get_dummies(apply_em(projection, cluster_params[index]['n_clusters'], cluster_params[index]['covariance_type'])).values, axis=1) for index, projection in enumerate(all_test_projections)]
+
+
+	for index, projection in enumerate(full_train):
+
+		classifier = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(8, 6), random_state=1, max_iter=10000)
+		fit_start = time.time()
+		classifier.fit(projection, train_y.values.ravel())
+		fit_end = time.time() - fit_start
+		predictions = classifier.predict(full_test[index])
+
+		print(algs[index])
+		print(metrics.classification_report(test_y.values.ravel(), predictions, zero_division=0))
+
+		count = 0
+		correct = 0
+
+		for jindex, prediction in enumerate(predictions):
+			if prediction == test_y.values.ravel()[jindex]:
+				correct += 1
+
+			count += 1
+
+		results.append({'alg': algs[index], 'accuracy': correct / count, 'training_time': fit_end, "iterations": classifier.n_iter_})
+
+	return results
+
+	
+def tune_nn(train_x, train_y, test_x, test_y):
+	''' ''' 
+
+	results = []
+
+	train_pca_projection = pca_proj(train_x, 6)
+	full_train = np.append(train_pca_projection, pd.get_dummies(apply_em(train_pca_projection, 2, "full")).values, axis=1)
+
+	test_pca_projection = pca_proj(test_x, 6)
+	full_test = np.append(test_pca_projection, pd.get_dummies(apply_em(test_pca_projection, 2, "full")).values, axis=1)
+
+	print(full_train.shape)
+
+	for i in range(1, 10):
+		for j in range(1, 10):
+
+
+			classifier = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(i, j), random_state=1, max_iter=10000)
+			fit_start = time.time()
+			classifier.fit(full_train, train_y.values.ravel())
+			fit_end = time.time() - fit_start
+			predictions = classifier.predict(full_test)
+
+			# print(metrics.classification_report(test_y.values.ravel(), predictions, zero_division=0))
+
+			count = 0
+			correct = 0
+
+			for jindex, prediction in enumerate(predictions):
+				if prediction == test_y.values.ravel()[jindex]:
+					correct += 1
+
+				count += 1
+
+			results.append({'layer_1': i, 'layer_2': j, 'accuracy': correct / count, 'training_time': fit_end, "iterations": classifier.n_iter_})
+
+
+	return results
 
 
 
@@ -232,7 +438,7 @@ if __name__ == '__main__':
 	# print(kmeans(ica_projection, 20)) ## 2 clusters has a great silhouette score
 	# print(expectation_max(ica_projection, 20))
 	# rand_proj = rand_proj_reconstruction_error(train_x, 100)
-	# print(rand_proj) # min occurs around 7
+	# print(rand_proj) # min occurs around 11
 	# rp_reduced = rand_proj(train_x, 7)
 	# print(kmeans(rp_reduced, 10))
 	# print(expectation_max(rp_reduced, 20))
@@ -244,15 +450,15 @@ if __name__ == '__main__':
 
 
 	# Wine Dataset
-	train_x, train_y, test_x, test_y = data_wine.main('winequality-white.csv')
+	# train_x, train_y, test_x, test_y = data_wine.main('winequality-white.csv')
 	# # print(kmeans(train_x, 20))
 	# # print(expectation_max(train_x, 20))
 	# print(apply_PCA(train_x, 10))
-	pca_wine = pca_proj(train_x, 6)
+	# pca_wine = pca_proj(train_x, 6)
 	# # print(pca_wine.shape)
 	# pca_projection()
-	print(kmeans(pca_wine, 10))
-	print(expectation_max(pca_wine, 10))
+	# print(kmeans(pca_wine, 10))
+	# print(expectation_max(pca_wine, 10))
 	# ica_wine = apply_ICA(train_x) ### kurtosis of 0 doesn't occur, 1 to 3 all around 1. 
 	# print(ica_wine)
 	# ica_projection = ica_proj(train_x, 2)
@@ -267,6 +473,10 @@ if __name__ == '__main__':
 	# svd_reduced = svd_proj(train_x, 2)
 	# print(kmeans(svd_reduced, 10))
 	# print(expectation_max(svd_reduced, 10))
+	# print(apply_nn(train_x, train_y, test_x, test_y))
+	# print(apply_kmeans_nn(train_x, train_y, test_x, test_y))
+	# print(apply_em_nn(train_x, train_y, test_x, test_y))
+	# print(tune_nn(train_x, train_y, test_x, test_y))
 
 
 	pass 

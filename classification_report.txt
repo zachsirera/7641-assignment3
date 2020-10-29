@@ -1,0 +1,239 @@
+On reduced data: 
+none
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         5
+           4       0.00      0.00      0.00        32
+           5       0.00      0.00      0.00       275
+           6       0.44      1.00      0.62       410
+           7       0.00      0.00      0.00       172
+           8       0.00      0.00      0.00        29
+
+    accuracy                           0.44       923
+   macro avg       0.07      0.17      0.10       923
+weighted avg       0.20      0.44      0.27       923
+
+pca
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         5
+           4       0.00      0.00      0.00        32
+           5       0.48      0.37      0.42       275
+           6       0.46      0.80      0.58       410
+           7       0.00      0.00      0.00       172
+           8       0.00      0.00      0.00        29
+
+    accuracy                           0.46       923
+   macro avg       0.16      0.19      0.17       923
+weighted avg       0.35      0.46      0.38       923
+
+ica
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         5
+           4       0.06      0.25      0.10        32
+           5       0.25      0.33      0.28       275
+           6       0.47      0.41      0.44       410
+           7       0.16      0.06      0.09       172
+           8       0.00      0.00      0.00        29
+
+    accuracy                           0.30       923
+   macro avg       0.16      0.18      0.15       923
+weighted avg       0.31      0.30      0.30       923
+
+rp
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00       5.0
+           4       0.00      0.00      0.00      32.0
+           5       0.00      0.00      0.00     275.0
+           6       0.00      0.00      0.00     410.0
+           7       0.00      0.00      0.00     172.0
+           8       0.00      0.00      0.00      29.0
+           9       0.00      0.00      0.00       0.0
+
+    accuracy                           0.00     923.0
+   macro avg       0.00      0.00      0.00     923.0
+weighted avg       0.00      0.00      0.00     923.0
+
+svd
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         5
+           4       0.00      0.00      0.00        32
+           5       0.00      0.00      0.00       275
+           6       0.44      1.00      0.62       410
+           7       0.00      0.00      0.00       172
+           8       0.00      0.00      0.00        29
+
+    accuracy                           0.44       923
+   macro avg       0.07      0.17      0.10       923
+weighted avg       0.20      0.44      0.27       923
+
+[{'alg': 'none', 'accuracy': 0.4442036836403034, 'training_time': 0.09267711639404297, 'iterations': 20}, {'alg': 'pca', 'accuracy': 0.4647887323943662, 'training_time': 5.942560195922852, 'iterations': 1434}, {'alg': 'ica', 'accuracy': 0.30119176598049835, 'training_time': 10.281196117401123, 'iterations': 2685}, {'alg': 'rp', 'accuracy': 0.0, 'training_time': 0.1422741413116455, 'iterations': 2}, {'alg': 'svd', 'accuracy': 0.4442036836403034, 'training_time': 0.07172131538391113, 'iterations': 17}]
+
+
+
+
+
+
+
+On kmeans clustered reduced data:
+none
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.00      0.00      0.00        35
+           5       0.00      0.00      0.00       302
+           6       0.44      1.00      0.61       427
+           7       0.00      0.00      0.00       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.44       979
+   macro avg       0.06      0.14      0.09       979
+weighted avg       0.19      0.44      0.26       979
+
+pca
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.25      0.06      0.09        35
+           5       0.42      0.44      0.43       302
+           6       0.46      0.64      0.53       427
+           7       0.27      0.10      0.14       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.43       979
+   macro avg       0.20      0.18      0.17       979
+weighted avg       0.39      0.43      0.39       979
+
+ica
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.00      0.00      0.00        35
+           5       0.33      0.18      0.23       302
+           6       0.44      0.70      0.54       427
+           7       0.10      0.07      0.08       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.37       979
+   macro avg       0.12      0.14      0.12       979
+weighted avg       0.31      0.37      0.32       979
+
+rp
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.04      1.00      0.07        35
+           5       0.00      0.00      0.00       302
+           6       0.00      0.00      0.00       427
+           7       0.00      0.00      0.00       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.04       979
+   macro avg       0.01      0.14      0.01       979
+weighted avg       0.00      0.04      0.00       979
+
+svd
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.00      0.00      0.00        35
+           5       0.00      0.00      0.00       302
+           6       0.44      1.00      0.61       427
+           7       0.00      0.00      0.00       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.44       979
+   macro avg       0.06      0.14      0.09       979
+weighted avg       0.19      0.44      0.26       979
+
+[{'alg': 'none', 'accuracy': 0.43615934627170583, 'training_time': 0.12830376625061035, 'iterations': 21}, {'alg': 'pca', 'accuracy': 0.4330949948927477, 'training_time': 5.067229747772217, 'iterations': 890}, {'alg': 'ica', 'accuracy': 0.372829417773238, 'training_time': 18.547022104263306, 'iterations': 3324}, {'alg': 'rp', 'accuracy': 0.03575076608784474, 'training_time': 0.10728001594543457, 'iterations': 24}, {'alg': 'svd', 'accuracy': 0.43615934627170583, 'training_time': 0.08868002891540527, 'iterations': 21}]
+
+
+
+
+
+On em clustered reduced data:
+none
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.00      0.00      0.00        35
+           5       0.00      0.00      0.00       302
+           6       0.44      1.00      0.61       427
+           7       0.00      0.00      0.00       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.44       979
+   macro avg       0.06      0.14      0.09       979
+weighted avg       0.19      0.44      0.26       979
+
+pca
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.00      0.00      0.00        35
+           5       0.42      0.37      0.40       302
+           6       0.46      0.70      0.55       427
+           7       0.33      0.12      0.18       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.44       979
+   macro avg       0.17      0.17      0.16       979
+weighted avg       0.39      0.44      0.40       979
+
+ica
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.00      0.00      0.00        35
+           5       0.23      0.16      0.19       302
+           6       0.46      0.72      0.56       427
+           7       0.10      0.06      0.08       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.37       979
+   macro avg       0.11      0.13      0.12       979
+weighted avg       0.29      0.37      0.32       979
+
+rp
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.00      0.00      0.00        35
+           5       0.00      0.00      0.00       302
+           6       0.50      0.01      0.02       427
+           7       0.18      1.00      0.31       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.18       979
+   macro avg       0.10      0.14      0.05       979
+weighted avg       0.25      0.18      0.06       979
+
+svd
+              precision    recall  f1-score   support
+
+           3       0.00      0.00      0.00         3
+           4       0.00      0.00      0.00        35
+           5       0.00      0.00      0.00       302
+           6       0.44      1.00      0.61       427
+           7       0.00      0.00      0.00       176
+           8       0.00      0.00      0.00        35
+           9       0.00      0.00      0.00         1
+
+    accuracy                           0.44       979
+   macro avg       0.06      0.14      0.09       979
+weighted avg       0.19      0.44      0.26       979
+
+[{'alg': 'none', 'accuracy': 0.43615934627170583, 'training_time': 0.12990164756774902, 'iterations': 21}, {'alg': 'pca', 'accuracy': 0.4402451481103167, 'training_time': 11.255675792694092, 'iterations': 1887}, {'alg': 'ica', 'accuracy': 0.3738508682328907, 'training_time': 6.684061288833618, 'iterations': 840}, {'alg': 'rp', 'accuracy': 0.18386108273748722, 'training_time': 0.15293431282043457, 'iterations': 29}, {'alg': 'svd', 'accuracy': 0.43615934627170583, 'training_time': 0.0954139232635498, 'iterations': 21}]

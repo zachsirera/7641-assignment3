@@ -2,6 +2,7 @@ import matplotlib.lines as mlines
 import matplotlib.pyplot as plt
 
 import pandas as pd 
+import numpy as np
 
 def kmeans_adult():
 	scores = [{'n_clusters': 2, 'algorithm': 'full', 'silhouette_score': 0.5865223038402563, 'training_time': 1.166788101196289, 'distortion': 52751.567453108786, 'inertia': 121826826751721.27}, 
@@ -850,31 +851,30 @@ def kmeans_wine_ica():
 def adult_reconstruction_error():
 	''' ''' 
 
-	results = [{'n_components': 1, 'reconstruction_error': 100473429.53834943}, {'n_components': 2, 'reconstruction_error': 17623449.405405868}, {'n_components': 3, 'reconstruction_error': 21591523.78576281}, {'n_components': 4, 'reconstruction_error': 26596144.34903057}, {'n_components': 5, 'reconstruction_error': 16356962.77910273}, {'n_components': 6, 'reconstruction_error': 23176237.509543948}, {'n_components': 7, 'reconstruction_error': 11375251.252586138}, {'n_components': 8, 'reconstruction_error': 10947078.023808429}, {'n_components': 9, 'reconstruction_error': 22290597.04923112}, {'n_components': 10, 'reconstruction_error': 44705925.28239508}, {'n_components': 11, 'reconstruction_error': 71584241.26271145}, {'n_components': 12, 'reconstruction_error': 42543452.47638469}, {'n_components': 13, 'reconstruction_error': 29162941.571314916}, {'n_components': 14, 'reconstruction_error': 46262331.64163633}, {'n_components': 15, 'reconstruction_error': 21705213.764183264}, {'n_components': 16, 'reconstruction_error': 32459474.36997147}, {'n_components': 17, 'reconstruction_error': 22097745.48591609}, {'n_components': 18, 'reconstruction_error': 27995014.300517615}, {'n_components': 19, 'reconstruction_error': 15861676.425773608}, {'n_components': 20, 'reconstruction_error': 40247706.09586157}, {'n_components': 21, 'reconstruction_error': 51425632.7363778}, {'n_components': 22, 'reconstruction_error': 56317482.72965463}, {'n_components': 23, 'reconstruction_error': 8851753.672714634}, {'n_components': 24, 'reconstruction_error': 16598177.469997112}, {'n_components': 25, 'reconstruction_error': 29697390.531267617}, {'n_components': 26, 'reconstruction_error': 34282540.07828557}, {'n_components': 27, 'reconstruction_error': 27454327.937977847}, {'n_components': 28, 'reconstruction_error': 21444788.991912942}, {'n_components': 29, 'reconstruction_error': 28423548.083028514}, {'n_components': 30, 'reconstruction_error': 22550671.845011093}, {'n_components': 31, 'reconstruction_error': 16672711.352677759}, {'n_components': 32, 'reconstruction_error': 46663217.3711332}, {'n_components': 33, 'reconstruction_error': 39059319.57881969}, {'n_components': 34, 'reconstruction_error': 13159486.264916483}, {'n_components': 35, 'reconstruction_error': 34525913.63307098}, {'n_components': 36, 'reconstruction_error': 36633201.035651095}, {'n_components': 37, 'reconstruction_error': 25366792.71254824}, {'n_components': 38, 'reconstruction_error': 14260839.263438595}, {'n_components': 39, 'reconstruction_error': 13154653.633163922}, {'n_components': 40, 'reconstruction_error': 12636367.896508457}, {'n_components': 41, 'reconstruction_error': 34351369.07365988}, {'n_components': 42, 'reconstruction_error': 21596571.79827928}, {'n_components': 43, 'reconstruction_error': 46985940.72787806}, {'n_components': 44, 'reconstruction_error': 59288646.66941428}, {'n_components': 45, 'reconstruction_error': 18053260.442172255}, {'n_components': 46, 'reconstruction_error': 16694559.12756854}, {'n_components': 47, 'reconstruction_error': 28700529.854595732}, {'n_components': 48, 'reconstruction_error': 42281231.26012908}, {'n_components': 49, 'reconstruction_error': 44212270.388917245}, {'n_components': 50, 'reconstruction_error': 12811417.396683881}, {'n_components': 51, 'reconstruction_error': 42773889.879836045}, {'n_components': 52, 'reconstruction_error': 25046116.111364182}, {'n_components': 53, 'reconstruction_error': 21673770.572826773}, {'n_components': 54, 'reconstruction_error': 52080385.37850941}, {'n_components': 55, 'reconstruction_error': 46732360.5501821}, {'n_components': 56, 'reconstruction_error': 22341353.747407082}, {'n_components': 57, 'reconstruction_error': 26045627.320403885}, {'n_components': 58, 'reconstruction_error': 26555647.235836346}, {'n_components': 59, 'reconstruction_error': 19449761.0197313}, {'n_components': 60, 'reconstruction_error': 6549954.397139458}, {'n_components': 61, 'reconstruction_error': 16366895.237205004}, {'n_components': 62, 'reconstruction_error': 48958383.096775405}, {'n_components': 63, 'reconstruction_error': 50198323.19501473}, {'n_components': 64, 'reconstruction_error': 33138223.44447365}, {'n_components': 65, 'reconstruction_error': 23446015.88006789}, {'n_components': 66, 'reconstruction_error': 19182682.417969067}, {'n_components': 67, 'reconstruction_error': 28760423.225900434}, {'n_components': 68, 'reconstruction_error': 34551905.9829732}, {'n_components': 69, 'reconstruction_error': 26665709.14156936}, {'n_components': 70, 'reconstruction_error': 8001938.452425927}, {'n_components': 71, 'reconstruction_error': 35459904.94332186}, {'n_components': 72, 'reconstruction_error': 72693019.65857518}, {'n_components': 73, 'reconstruction_error': 67128613.2708954}, {'n_components': 74, 'reconstruction_error': 31644738.497691035}, {'n_components': 75, 'reconstruction_error': 33109059.907722432}, {'n_components': 76, 'reconstruction_error': 14019695.155458272}, {'n_components': 77, 'reconstruction_error': 7602735.530113142}, {'n_components': 78, 'reconstruction_error': 30300997.362656858}, {'n_components': 79, 'reconstruction_error': 19713445.11440673}, {'n_components': 80, 'reconstruction_error': 21126703.034003716}, {'n_components': 81, 'reconstruction_error': 28005526.674738746}, {'n_components': 82, 'reconstruction_error': 39486064.005931094}, {'n_components': 83, 'reconstruction_error': 20703783.253523596}, {'n_components': 84, 'reconstruction_error': 34807182.15940111}, {'n_components': 85, 'reconstruction_error': 17422213.27359551}, {'n_components': 86, 'reconstruction_error': 51273285.9663983}, {'n_components': 87, 'reconstruction_error': 22883554.01251864}, {'n_components': 88, 'reconstruction_error': 36979241.8382533}, {'n_components': 89, 'reconstruction_error': 20127739.323683742}, {'n_components': 90, 'reconstruction_error': 27641508.20856473}, {'n_components': 91, 'reconstruction_error': 3948843.730505711}, {'n_components': 92, 'reconstruction_error': 18699669.838682357}, {'n_components': 93, 'reconstruction_error': 30316817.04877514}, {'n_components': 94, 'reconstruction_error': 29152889.48678713}, {'n_components': 95, 'reconstruction_error': 31189331.377470613}, {'n_components': 96, 'reconstruction_error': 8653620.648475295}, {'n_components': 97, 'reconstruction_error': 37826260.66039956}, {'n_components': 98, 'reconstruction_error': 51118180.84926803}, {'n_components': 99, 'reconstruction_error': 27655987.895807188}]
+	results = [{'n_components': 1, 'reconstruction_error': 3595257.4121999415}, {'n_components': 11, 'reconstruction_error': 1578116.3650108727}, {'n_components': 21, 'reconstruction_error': 2221095.502646234}, {'n_components': 31, 'reconstruction_error': 7957077.931938618}, {'n_components': 41, 'reconstruction_error': 4183048.191310688}, {'n_components': 51, 'reconstruction_error': 2228000.2506673774}, {'n_components': 61, 'reconstruction_error': 6357808.779139418}, {'n_components': 71, 'reconstruction_error': 1848020.295083082}, {'n_components': 81, 'reconstruction_error': 1849946.785652501}, {'n_components': 91, 'reconstruction_error': 5892140.937570505}]
 
 	x = [x['n_components'] for x in results]
 	y = [y['reconstruction_error'] for y in results]
 
 	plt.plot(x, y)
 	plt.xlabel("No. of Components")
-	plt.ylabel("Reconstruction Error")
-	plt.title("Randomized Projection \n Adult")
+	plt.ylabel("Average Reconstruction Error")
+	plt.title("Adult (RP) \n 10 runs at each N")
 	plt.tight_layout()
 	plt.savefig("figures/adult_rp")
 	plt.cla()
 
 def wine_reconstruction_error():
 
-	results = [{'n_components': 1, 'reconstruction_error': 3.498320367612651e-25}, {'n_components': 2, 'reconstruction_error': 5.285873095594323e-26}, {'n_components': 3, 'reconstruction_error': 2.325242871233319e-26}, {'n_components': 4, 'reconstruction_error': 7.251885232378767e-27}, {'n_components': 5, 'reconstruction_error': 1.8224986965661424e-26}, {'n_components': 6, 'reconstruction_error': 5.37605548539828e-26}, {'n_components': 7, 'reconstruction_error': 1.8346815509978844e-26}, {'n_components': 8, 'reconstruction_error': 3.1374401911060968e-27}, {'n_components': 9, 'reconstruction_error': 3.7040840156381375e-27}]
-	# results = [{'n_components': 1, 'reconstruction_error': 2.2216110737269734e-26}, {'n_components': 2, 'reconstruction_error': 1.3458390708156127e-23}, {'n_components': 3, 'reconstruction_error': 2.2724764619583465e-24}, {'n_components': 4, 'reconstruction_error': 7.993529909504242e-26}, {'n_components': 5, 'reconstruction_error': 3.615473332834437e-25}, {'n_components': 6, 'reconstruction_error': 5.502599021463136e-25}, {'n_components': 7, 'reconstruction_error': 1.5887668746795741e-24}, {'n_components': 8, 'reconstruction_error': 1.9382919228920747e-26}, {'n_components': 9, 'reconstruction_error': 2.78446125017654e-25}]
+	results = [{'n_components': 1, 'reconstruction_error': 1.8175004341750697e-27}, {'n_components': 2, 'reconstruction_error': 3.4042950634414595e-27}, {'n_components': 3, 'reconstruction_error': 3.591960944777136e-28}, {'n_components': 4, 'reconstruction_error': 3.7229152371511215e-27}, {'n_components': 5, 'reconstruction_error': 2.7844772551050772e-28}, {'n_components': 6, 'reconstruction_error': 1.74641821985774e-28}, {'n_components': 7, 'reconstruction_error': 8.232488845272395e-28}, {'n_components': 8, 'reconstruction_error': 6.59587535072091e-27}, {'n_components': 9, 'reconstruction_error': 6.61671116928303e-27}]
 
 	x = [x['n_components'] for x in results]
 	y = [y['reconstruction_error'] for y in results]
 
 	plt.plot(x, y)
 	plt.xlabel("No. of Components")
-	plt.ylabel("Reconstruction Error")
-	plt.title("Randomized Projection \n Wine")
+	plt.ylabel("Average Reconstruction Error")
+	plt.title("Wine (RP) \n 10 runs at each N")
 	plt.tight_layout()
 	plt.savefig("figures/wine_rp")
 	plt.cla()
@@ -1487,6 +1487,79 @@ def wine_pca():
 	plt.cla()
 
 
+def nn_3d(): 
+	''' ''' 
+	results = [{'layer_1': 1, 'layer_2': 1, 'accuracy': 0.4620758483033932, 'training_time': 0.09032487869262695, 'iterations': 17}, {'layer_1': 1, 'layer_2': 2, 'accuracy': 0.4620758483033932, 'training_time': 0.9772727489471436, 'iterations': 217}, {'layer_1': 1, 'layer_2': 3, 'accuracy': 0.46407185628742514, 'training_time': 6.036705017089844, 'iterations': 1497}, {'layer_1': 1, 'layer_2': 4, 'accuracy': 0.48602794411177647, 'training_time': 2.283704996109009, 'iterations': 550}, {'layer_1': 1, 'layer_2': 5, 'accuracy': 0.4660678642714571, 'training_time': 4.147724151611328, 'iterations': 961}, {'layer_1': 1, 'layer_2': 6, 'accuracy': 0.47305389221556887, 'training_time': 2.606400966644287, 'iterations': 621}, {'layer_1': 1, 'layer_2': 7, 'accuracy': 0.47105788423153694, 'training_time': 6.4673449993133545, 'iterations': 1271}, {'layer_1': 1, 'layer_2': 8, 'accuracy': 0.46407185628742514, 'training_time': 1.2690129280090332, 'iterations': 259}, {'layer_1': 1, 'layer_2': 9, 'accuracy': 0.47005988023952094, 'training_time': 3.640263319015503, 'iterations': 682}, {'layer_1': 2, 'layer_2': 1, 'accuracy': 0.4620758483033932, 'training_time': 0.6037530899047852, 'iterations': 89}, {'layer_1': 2, 'layer_2': 2, 'accuracy': 0.4930139720558882, 'training_time': 3.5915029048919678, 'iterations': 920}, {'layer_1': 2, 'layer_2': 3, 'accuracy': 0.4620758483033932, 'training_time': 1.094146966934204, 'iterations': 228}, {'layer_1': 2, 'layer_2': 4, 'accuracy': 0.4880239520958084, 'training_time': 6.04141092300415, 'iterations': 1609}, {'layer_1': 2, 'layer_2': 5, 'accuracy': 0.46706586826347307, 'training_time': 3.5221519470214844, 'iterations': 851}, {'layer_1': 2, 'layer_2': 6, 'accuracy': 0.4810379241516966, 'training_time': 8.845054388046265, 'iterations': 1695}, {'layer_1': 2, 'layer_2': 7, 'accuracy': 0.4750499001996008, 'training_time': 7.849733829498291, 'iterations': 1308}, {'layer_1': 2, 'layer_2': 8, 'accuracy': 0.4880239520958084, 'training_time': 4.734203815460205, 'iterations': 1162}, {'layer_1': 2, 'layer_2': 9, 'accuracy': 0.48403193612774453, 'training_time': 12.620036840438843, 'iterations': 2159}, {'layer_1': 3, 'layer_2': 1, 'accuracy': 0.4620758483033932, 'training_time': 0.10611414909362793, 'iterations': 18}, {'layer_1': 3, 'layer_2': 2, 'accuracy': 0.46107784431137727, 'training_time': 1.3841321468353271, 'iterations': 262}, {'layer_1': 3, 'layer_2': 3, 'accuracy': 0.47105788423153694, 'training_time': 3.52181077003479, 'iterations': 463}, {'layer_1': 3, 'layer_2': 4, 'accuracy': 0.48902195608782434, 'training_time': 6.964730262756348, 'iterations': 1722}, {'layer_1': 3, 'layer_2': 5, 'accuracy': 0.49800399201596807, 'training_time': 4.674324989318848, 'iterations': 988}, {'layer_1': 3, 'layer_2': 6, 'accuracy': 0.49101796407185627, 'training_time': 3.2475430965423584, 'iterations': 700}, {'layer_1': 3, 'layer_2': 7, 'accuracy': 0.4940119760479042, 'training_time': 8.920577049255371, 'iterations': 1582}, {'layer_1': 3, 'layer_2': 8, 'accuracy': 0.48602794411177647, 'training_time': 15.582042217254639, 'iterations': 2977}, {'layer_1': 3, 'layer_2': 9, 'accuracy': 0.48602794411177647, 'training_time': 3.113574981689453, 'iterations': 778}, {'layer_1': 4, 'layer_2': 1, 'accuracy': 0.4590818363273453, 'training_time': 3.536159038543701, 'iterations': 540}, {'layer_1': 4, 'layer_2': 2, 'accuracy': 0.4820359281437126, 'training_time': 2.0600697994232178, 'iterations': 451}, {'layer_1': 4, 'layer_2': 3, 'accuracy': 0.49700598802395207, 'training_time': 8.132596254348755, 'iterations': 1822}, {'layer_1': 4, 'layer_2': 4, 'accuracy': 0.4930139720558882, 'training_time': 2.206561803817749, 'iterations': 413}, {'layer_1': 4, 'layer_2': 5, 'accuracy': 0.47704590818363274, 'training_time': 8.40475583076477, 'iterations': 1806}, {'layer_1': 4, 'layer_2': 6, 'accuracy': 0.49600798403193613, 'training_time': 5.895766973495483, 'iterations': 1313}, {'layer_1': 4, 'layer_2': 7, 'accuracy': 0.49101796407185627, 'training_time': 3.734257221221924, 'iterations': 805}, {'layer_1': 4, 'layer_2': 8, 'accuracy': 0.49201596806387227, 'training_time': 7.324709892272949, 'iterations': 1512}, {'layer_1': 4, 'layer_2': 9, 'accuracy': 0.49600798403193613, 'training_time': 13.485341310501099, 'iterations': 2495}, {'layer_1': 5, 'layer_2': 1, 'accuracy': 0.4620758483033932, 'training_time': 0.07919192314147949, 'iterations': 17}, {'layer_1': 5, 'layer_2': 2, 'accuracy': 0.499001996007984, 'training_time': 5.239800930023193, 'iterations': 1325}, {'layer_1': 5, 'layer_2': 3, 'accuracy': 0.48003992015968067, 'training_time': 3.252802848815918, 'iterations': 653}, {'layer_1': 5, 'layer_2': 4, 'accuracy': 0.4630738522954092, 'training_time': 1.3745450973510742, 'iterations': 201}, {'layer_1': 5, 'layer_2': 5, 'accuracy': 0.48602794411177647, 'training_time': 2.4901928901672363, 'iterations': 501}, {'layer_1': 5, 'layer_2': 6, 'accuracy': 0.4820359281437126, 'training_time': 10.06949782371521, 'iterations': 2150}, {'layer_1': 5, 'layer_2': 7, 'accuracy': 0.4750499001996008, 'training_time': 9.401965141296387, 'iterations': 2022}, {'layer_1': 5, 'layer_2': 8, 'accuracy': 0.47704590818363274, 'training_time': 5.476380109786987, 'iterations': 1219}, {'layer_1': 5, 'layer_2': 9, 'accuracy': 0.4940119760479042, 'training_time': 11.878022909164429, 'iterations': 2260}, {'layer_1': 6, 'layer_2': 1, 'accuracy': 0.4620758483033932, 'training_time': 0.0758368968963623, 'iterations': 17}, {'layer_1': 6, 'layer_2': 2, 'accuracy': 0.4620758483033932, 'training_time': 0.07061886787414551, 'iterations': 15}, {'layer_1': 6, 'layer_2': 3, 'accuracy': 0.48902195608782434, 'training_time': 9.228090047836304, 'iterations': 1979}, {'layer_1': 6, 'layer_2': 4, 'accuracy': 0.4870259481037924, 'training_time': 12.892588138580322, 'iterations': 2821}, {'layer_1': 6, 'layer_2': 5, 'accuracy': 0.48502994011976047, 'training_time': 11.501774787902832, 'iterations': 2572}, {'layer_1': 6, 'layer_2': 6, 'accuracy': 0.49201596806387227, 'training_time': 15.022615194320679, 'iterations': 1478}, {'layer_1': 6, 'layer_2': 7, 'accuracy': 0.49101796407185627, 'training_time': 9.381207942962646, 'iterations': 1694}, {'layer_1': 6, 'layer_2': 8, 'accuracy': 0.4880239520958084, 'training_time': 14.296661853790283, 'iterations': 2690}, {'layer_1': 6, 'layer_2': 9, 'accuracy': 0.49101796407185627, 'training_time': 14.198133945465088, 'iterations': 3033}, {'layer_1': 7, 'layer_2': 1, 'accuracy': 0.4810379241516966, 'training_time': 1.273055076599121, 'iterations': 291}, {'layer_1': 7, 'layer_2': 2, 'accuracy': 0.47704590818363274, 'training_time': 1.0020079612731934, 'iterations': 236}, {'layer_1': 7, 'layer_2': 3, 'accuracy': 0.4870259481037924, 'training_time': 7.341955661773682, 'iterations': 1657}, {'layer_1': 7, 'layer_2': 4, 'accuracy': 0.5029940119760479, 'training_time': 6.565144062042236, 'iterations': 1414}, {'layer_1': 7, 'layer_2': 5, 'accuracy': 0.48502994011976047, 'training_time': 12.01989197731018, 'iterations': 2615}, {'layer_1': 7, 'layer_2': 6, 'accuracy': 0.4780439121756487, 'training_time': 16.04697895050049, 'iterations': 3385}, {'layer_1': 7, 'layer_2': 7, 'accuracy': 0.49101796407185627, 'training_time': 13.205141067504883, 'iterations': 2707}, {'layer_1': 7, 'layer_2': 8, 'accuracy': 0.48403193612774453, 'training_time': 21.87532114982605, 'iterations': 4635}, {'layer_1': 7, 'layer_2': 9, 'accuracy': 0.5059880239520959, 'training_time': 13.309131860733032, 'iterations': 2693}, {'layer_1': 8, 'layer_2': 1, 'accuracy': 0.4620758483033932, 'training_time': 2.5370349884033203, 'iterations': 473}, {'layer_1': 8, 'layer_2': 2, 'accuracy': 0.48902195608782434, 'training_time': 8.385915040969849, 'iterations': 2022}, {'layer_1': 8, 'layer_2': 3, 'accuracy': 0.47604790419161674, 'training_time': 6.288861036300659, 'iterations': 1339}, {'layer_1': 8, 'layer_2': 4, 'accuracy': 0.469061876247505, 'training_time': 4.648652791976929, 'iterations': 713}, {'layer_1': 8, 'layer_2': 5, 'accuracy': 0.47305389221556887, 'training_time': 5.076993942260742, 'iterations': 984}, {'layer_1': 8, 'layer_2': 6, 'accuracy': 0.4930139720558882, 'training_time': 13.45226788520813, 'iterations': 2772}, {'layer_1': 8, 'layer_2': 7, 'accuracy': 0.499001996007984, 'training_time': 17.687772035598755, 'iterations': 3997}, {'layer_1': 8, 'layer_2': 8, 'accuracy': 0.501996007984032, 'training_time': 23.63360095024109, 'iterations': 4908}, {'layer_1': 8, 'layer_2': 9, 'accuracy': 0.48602794411177647, 'training_time': 12.871636867523193, 'iterations': 2397}, {'layer_1': 9, 'layer_2': 1, 'accuracy': 0.49700598802395207, 'training_time': 4.853816032409668, 'iterations': 862}, {'layer_1': 9, 'layer_2': 2, 'accuracy': 0.48902195608782434, 'training_time': 16.404805898666382, 'iterations': 3323}, {'layer_1': 9, 'layer_2': 3, 'accuracy': 0.48502994011976047, 'training_time': 7.7639899253845215, 'iterations': 1463}, {'layer_1': 9, 'layer_2': 4, 'accuracy': 0.4880239520958084, 'training_time': 18.820865869522095, 'iterations': 3190}, {'layer_1': 9, 'layer_2': 5, 'accuracy': 0.49001996007984033, 'training_time': 5.086238861083984, 'iterations': 1044}, {'layer_1': 9, 'layer_2': 6, 'accuracy': 0.4820359281437126, 'training_time': 27.916048049926758, 'iterations': 5022}, {'layer_1': 9, 'layer_2': 7, 'accuracy': 0.49600798403193613, 'training_time': 23.022789239883423, 'iterations': 3981}, {'layer_1': 9, 'layer_2': 8, 'accuracy': 0.4870259481037924, 'training_time': 20.188467979431152, 'iterations': 2931}, {'layer_1': 9, 'layer_2': 9, 'accuracy': 0.49800399201596807, 'training_time': 21.165727853775024, 'iterations': 2214}]
+
+	max_layer_1 = max([x['layer_1'] for x in results])
+	max_layer_2 = max([x['layer_2'] for x in results])
+
+	ordered = [[0 for i in range(1, max_layer_1 + 1)] for j in range(1, max_layer_2 + 1)]
+
+	for result in results: 
+		ordered[result['layer_1'] - 1][result['layer_2'] - 1] = result['accuracy']
+
+	# print(ordered)
+
+	x = y = np.arange(1, len(ordered) + 1, 1)
+	X, Y = np.meshgrid(x, y)
+
+	fig, ax = plt.subplots()
+
+	for i in range(0, max_layer_1):
+	    for j in range(0, max_layer_2):
+	        text = ax.text(j, i, round(ordered[i][j], 2),
+	                       ha="center", va="center", color="w")
+
+
+	ax.set_xticks([i for i in range(max_layer_1)])
+	ax.set_xticklabels([i + 1 for i in range(max_layer_1)])
+	ax.set_yticks([i for i in range(max_layer_2)])
+	ax.set_yticklabels([i + 1 for i in range(max_layer_2)])
+	ax.imshow(ordered)
+	plt.title("Neural Network Tuning\nAccuracy")
+	plt.xlabel("Number of nodes in Layer 1")
+	plt.ylabel("Number of nodes in Layer 2")
+	plt.tight_layout()
+	plt.savefig("figures/nn_accuracy")
+	plt.cla()
+
+
+	ordered = [[0 for i in range(1, max_layer_1 + 1)] for j in range(1, max_layer_2 + 1)]
+
+	for result in results: 
+		ordered[result['layer_1'] - 1][result['layer_2'] - 1] = result['training_time']
+
+
+	x = y = np.arange(1, len(ordered) + 1, 1)
+	X, Y = np.meshgrid(x, y)
+
+	fig, ax = plt.subplots()
+
+	for i in range(0, max_layer_1):
+	    for j in range(0, max_layer_2):
+	        text = ax.text(j, i, round(ordered[i][j], 2),
+	                       ha="center", va="center", color="w")
+
+
+	ax.set_xticks([i for i in range(max_layer_1)])
+	ax.set_xticklabels([i + 1 for i in range(max_layer_1)])
+	ax.set_yticks([i for i in range(max_layer_2)])
+	ax.set_yticklabels([i + 1 for i in range(max_layer_2)])
+	ax.imshow(ordered)
+	plt.title("Neural Network Tuning\nTraining Time")
+	plt.xlabel("Number of nodes in Layer 1")
+	plt.ylabel("Number of nodes in Layer 2")
+	plt.tight_layout()
+	# plt.show()
+	plt.savefig("figures/nn_training_time")
+	plt.cla()
+
+
+
+
+
+
 if __name__ == '__main__':
 
 	#### Adult Dataset
@@ -1513,8 +1586,8 @@ if __name__ == '__main__':
 	# kmeans_wine()
 	# em_wine()
 	# wine_pca()
-	kmeans_wine_pca()
-	em_wine_pca()
+	# kmeans_wine_pca()
+	# em_wine_pca()
 	# wine_ica_kurtosis()
 	# kmeans_wine_ica()
 	# em_wine_ica()
@@ -1524,7 +1597,7 @@ if __name__ == '__main__':
 	# wine_svd_explained_variance()
 	# kmeans_wine_svd()
 	# em_wine_svd()
-
+	nn_3d()
 
 	pass
 
