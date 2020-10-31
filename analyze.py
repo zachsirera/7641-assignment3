@@ -14,6 +14,8 @@ from sklearn.neural_network import MLPClassifier
 from scipy.spatial.distance import cdist 
 from scipy.stats import kurtosis
 
+from collections import Counter
+
 import numpy as np 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -235,6 +237,14 @@ def svd_proj(train_x, n):
 	return reduced_df
 
 
+def simple_nn(train_x, train_y, test_x, test_y): 
+
+	classifier = MLPClassifier(solver='lbfgs', alpha=1e-5, hidden_layer_sizes=(8, 6), random_state=1)
+	classifier.fit(train_x, train_y)
+
+	predictions = classifier.predict(test_x)
+	print(metrics.classification_report(test_y.values.ravel(), predictions, zero_division=0))
+
 
 def apply_nn(train_x, train_y, test_x, test_y): 
 	''' ''' 
@@ -420,11 +430,169 @@ def tune_nn(train_x, train_y, test_x, test_y):
 
 	return results
 
+def count_labels(train_y, test_y):
+
+	all_data = train_y.append(test_y)
+
+	hist = all_data.hist()
+	plt.show()
+
+def svd_plots_adult(train_x, train_t):
+
+	svd = TruncatedSVD(n_components=2, algorithm="randomized")
+	reduced_df = svd.fit_transform(train_x.astype("float"))
+
+	principal_df = pd.DataFrame(data = reduced_df, columns = ['principal_component_' + str(i) for i in range(1, 2+1)])
+
+	principal_df['label'] = train_y
+
+	colors = ['r', 'g']
+
+	list_data = principal_df.dropna().to_dict('records')
+
+	for i in range(len(list_data)):
+		plt.plot(list_data[i]['principal_component_1'], list_data[i]['principal_component_2'], marker='o', c=colors[int(list_data[i]['label'])])
+
+	plt.title("SVD: Adult \n Two Components")
+	plt.xlabel("Principal Component 1")
+	plt.ylabel("Principal Component 2")
+	plt.tight_layout()
+	plt.savefig("figures/svd_adult_2")
+	plt.cla()
+
+def ica_plots_adult(train_x, train_t):
+
+	rp = FastICA(n_components = 2)
+	reduced_df = rp.fit_transform(train_x)
+
+	principal_df = pd.DataFrame(data = reduced_df, columns = ['principal_component_' + str(i) for i in range(1, 2+1)])
+
+	principal_df['label'] = train_y
+
+	colors = ['r', 'g']
+
+	list_data = principal_df.dropna().to_dict('records')
+
+	for i in range(len(list_data)):
+		plt.plot(list_data[i]['principal_component_1'], list_data[i]['principal_component_2'], marker='o', c=colors[int(list_data[i]['label'])])
+
+	plt.title("ICA: Adult \n Two Components")
+	plt.xlabel("Principal Component 1")
+	plt.ylabel("Principal Component 2")
+	plt.tight_layout()
+	plt.savefig("figures/ica_adult_2")
+	plt.cla()
+
+def ica_plots_wine(train_x):
+	
+	rp = FastICA(n_components = 3)
+	reduced_df = rp.fit_transform(train_x)
+
+	principal_df = pd.DataFrame(data = reduced_df, columns = ['principal_component_' + str(i) for i in range(1, 3+1)])
+
+	principal_df['label'] = train_y
+
+
+	colors = ['r', 'g', 'b', 'c', 'y', 'k', 'm']
+
+	list_data = principal_df.dropna().to_dict('records')
+
+	fig = plt.figure()
+	ax = fig.add_subplot(111, projection='3d')
+
+	for i in range(len(list_data)):
+		x = list_data[i]['principal_component_1']
+		y = list_data[i]['principal_component_2']
+		z = list_data[i]['principal_component_3']
+
+		ax.plot(x, y, z, marker='o', c=colors[int(list_data[i]['label']) - 3])
+
+	plt.title("ICA: Wine \n Three Components")
+	ax.set_xlabel('Principal Component 1')
+	ax.set_ylabel('Principal Component 2')
+	ax.set_zlabel('Principal Component 3')
+	plt.tight_layout()
+	plt.savefig("figures/ica_wine_3")
+	plt.cla()
+
+
+def svd_plots_wine(train_x):
+	
+	svd = TruncatedSVD(n_components=2, algorithm="randomized")
+	reduced_df = svd.fit_transform(train_x.astype("float"))
+
+	principal_df = pd.DataFrame(data = reduced_df, columns = ['principal_component_' + str(i) for i in range(1, 2+1)])
+
+	principal_df['label'] = train_y
+
+	colors = ['r', 'g', 'b', 'c', 'y', 'k', 'm']
+
+
+	list_data = principal_df.dropna().to_dict('records')
+
+	for i in range(len(list_data)):
+		plt.plot(list_data[i]['principal_component_1'], list_data[i]['principal_component_2'], marker='o', c=colors[int(list_data[i]['label']) - 3])
+
+	plt.title("SVD: Wine \n Two Components")
+	plt.xlabel("Principal Component 1")
+	plt.ylabel("Principal Component 2")
+	plt.tight_layout()
+	plt.savefig("figures/svd_wine_2")
+	plt.cla()
+
+def get_pca_wine_eigenvalues(train_x): 
+	''' ''' 
+
+	results = []
+
+	# Extract the feature names from the dataframe
+	features = train_x.columns
+	x = train_x.loc[:, features].values
+
+	# Apply the standard scaler to the dataframe. PCA expects this. 
+	scaled = StandardScaler().fit_transform(x)
+	cov_matr = np.cov(scaled)
+
+	eig_vals, eig_vecs = np.linalg.eig(cov_matr)
+
+	return eig_vals.tolist()
+
+	# plt.hist(eig_vals)
+	# plt.title("Wine (PCA)")
+	# plt.xlabel("Eigenvalues")
+	# plt.savefig("figures/wine_pca_eig")
+	# plt.cla()
+
+def get_pca_adult_eigenvalues(train_x): 
+	''' ''' 
+
+	results = []
+
+	# Extract the feature names from the dataframe
+	features = train_x.columns
+	x = train_x.loc[:, features].values
+
+	# Apply the standard scaler to the dataframe. PCA expects this. 
+	scaled = StandardScaler().fit_transform(x)
+	cov_matr = np.cov(scaled)
+
+	eig_vals, eig_vecs = np.linalg.eig(cov_matr)
+
+	return eig_vals.tolist()
+
+	# plt.hist(eig_vals)
+	# plt.title("Adult (PCA)")
+	# plt.xlabel("Eigenvalues")
+	# plt.savefig("figures/adult_pca_eig")
+	# plt.cla()
+
+
+
 
 
 if __name__ == '__main__':
 	# Adult Dataset
-	# train_x, train_y, test_x, test_y = data_adult.main('adult_data.csv')
+	train_x, train_y, test_x, test_y = data_adult.main('adult_data.csv')
 	# print(type(train_x))
 	# print(kmeans(train_x, 10))
 	# print(expectation_max(train_x, 20))
@@ -446,7 +614,10 @@ if __name__ == '__main__':
 	# svd_reduced = svd_proj(train_x, 1)
 	# print(kmeans(svd_reduced, 10))
 	# print(expectation_max(svd_reduced, 10))
-
+	# print(count_labels(train_y, test_y))
+	# svd_plots_adult(train_x, train_y)
+	# ica_plots_adult(train_x, train_y)
+	print(get_pca_adult_eigenvalues(train_x))
 
 
 	# Wine Dataset
@@ -477,7 +648,10 @@ if __name__ == '__main__':
 	# print(apply_kmeans_nn(train_x, train_y, test_x, test_y))
 	# print(apply_em_nn(train_x, train_y, test_x, test_y))
 	# print(tune_nn(train_x, train_y, test_x, test_y))
-
+	# ica_plots_wine(train_x)
+	# svd_plots_wine(train_x)
+	# simple_nn(train_x, train_y, test_x, test_y)
+	# print(get_pca_wine_eigenvalues(train_x))
 
 	pass 
 

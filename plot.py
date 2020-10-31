@@ -268,7 +268,7 @@ def em_adult():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -317,7 +317,7 @@ def em_wine():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -479,7 +479,7 @@ def em_adult_pca():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -598,7 +598,7 @@ def em_wine_pca():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -649,7 +649,7 @@ def em_wine_ica():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -769,7 +769,7 @@ def em_adult_ica():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -987,7 +987,7 @@ def em_adult_rand():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -1035,7 +1035,7 @@ def em_wine_rand():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -1275,7 +1275,7 @@ def em_adult_svd():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -1394,7 +1394,7 @@ def em_wine_svd():
 	legend_labels = ['AIC', 'BIC', 'training_time', covariances[0], covariances[1], covariances[2], covariances[3]]
 
 	
-	ax1.set_xlabel("No. of Components")
+	ax1.set_xlabel("No. of Clusters")
 	ax1.set_ylabel("AIC/BIC score")
 	ax2.set_ylabel("Training Time (s)")
 
@@ -1563,40 +1563,40 @@ def nn_3d():
 if __name__ == '__main__':
 
 	#### Adult Dataset
-	# kmeans_adult()
-	# em_adult()
-	# adult_pca()
-	# kmeans_adult_pca()
-	# em_adult_pca()
-	# adult_ica_kurtosis()
-	# kmeans_adult_ica()
-	# em_adult_ica()
-	# kmeans_adult_rand()
-	# em_adult_rand()
-	# adult_reconstruction_error()
-	# adult_svd_explained_variance()
-	# kmeans_adult_svd()
-	# em_adult_svd()
+	kmeans_adult()
+	em_adult()
+	adult_pca()
+	kmeans_adult_pca()
+	em_adult_pca()
+	adult_ica_kurtosis()
+	kmeans_adult_ica()
+	em_adult_ica()
+	kmeans_adult_rand()
+	em_adult_rand()
+	adult_reconstruction_error()
+	adult_svd_explained_variance()
+	kmeans_adult_svd()
+	em_adult_svd()
 
 
 
 
 
 	#### Wine Dataset
-	# kmeans_wine()
-	# em_wine()
-	# wine_pca()
-	# kmeans_wine_pca()
-	# em_wine_pca()
-	# wine_ica_kurtosis()
-	# kmeans_wine_ica()
-	# em_wine_ica()
-	# kmeans_wine_rand()
-	# em_wine_rand()
-	# wine_reconstruction_error()
-	# wine_svd_explained_variance()
-	# kmeans_wine_svd()
-	# em_wine_svd()
+	kmeans_wine()
+	em_wine()
+	wine_pca()
+	kmeans_wine_pca()
+	em_wine_pca()
+	wine_ica_kurtosis()
+	kmeans_wine_ica()
+	em_wine_ica()
+	kmeans_wine_rand()
+	em_wine_rand()
+	wine_reconstruction_error()
+	wine_svd_explained_variance()
+	kmeans_wine_svd()
+	em_wine_svd()
 	nn_3d()
 
 	pass
